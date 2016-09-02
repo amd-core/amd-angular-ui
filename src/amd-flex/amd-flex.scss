@@ -1,0 +1,168 @@
+$namePrefix: 'amd';
+
+@mixin flexChildRowSizing($value) {
+	flex: 1 1 #{$value};
+	max-width: #{$value};
+	max-height: 100%;
+	box-sizing: border-box;
+}
+
+@mixin flexChildColSizing($value) {
+	flex: 1 1 #{$value};
+	max-width: 100%;
+	max-height: #{$value};
+	box-sizing: border-box;
+}
+
+@mixin flexChildRows($selector, $value) {
+	> [#{$selector}] {
+		@include flexChildRowSizing($value);
+	}
+
+	> [#{$selector}="33"] {
+		@include flexChildRowSizing(33.33%);
+	}
+
+	> [#{$selector}="66"] {
+		@include flexChildRowSizing(66.66%);
+	}
+}
+
+@mixin flexChildCols($selector, $value) {
+	> [#{$selector}] {
+		@include flexChildColSizing($value);
+	}
+
+	> [#{$selector}="33"] {
+		@include flexChildColSizing(33.33%);
+	}
+
+	> [#{$selector}="66"] {
+		@include flexChildColSizing(66.66%);
+	}
+}
+
+@mixin flexChildByBreakpoint($name: null) {
+	$flexName: '#{$namePrefix}-flex';
+	$flexNameSelector: '#{$flexName}';
+
+	$flexDirectionName: '#{$namePrefix}-flex-direction';
+	$flexDirectionNameSelector: '#{$flexDirectionName}';
+
+	@if $name != null {
+		$flexNameSelector: '#{$flexNameSelector}-#{$name}';
+		$flexDirectionNameSelector: '#{$flexDirectionNameSelector}-#{$name}';
+	}
+
+	[#{$flexNameSelector}] {
+		flex: 1;
+		box-sizing: border-box;
+	}
+
+	[#{$flexDirectionName}="row"] {
+		> [#{$flexNameSelector}="33"] {
+			@include flexChildRowSizing(33.33%);
+		}
+
+		> [#{$flexNameSelector}="66"] {
+			@include flexChildRowSizing(66.66%);
+		}
+	}
+
+	[#{$flexDirectionName}="column"] {
+		> [#{$flexNameSelector}="33"] {
+			@include flexChildColSizing(33.33%);
+		}
+
+		> [#{$flexNameSelector}="66"] {
+			@include flexChildColSizing(66.66%);
+		}
+	}
+
+	@if $name != null {
+		[#{$flexDirectionNameSelector}="row"] {
+			> [#{$flexNameSelector}="33"] {
+				@include flexChildRowSizing(33.33%);
+			}
+
+			> [#{$flexNameSelector}="66"] {
+				@include flexChildRowSizing(66.66%);
+			}
+		}
+
+		[#{$flexDirectionNameSelector}="column"] {
+			> [#{$flexNameSelector}="33"] {
+				@include flexChildColSizing(33.33%);
+			}
+
+			> [#{$flexNameSelector}="66"] {
+				@include flexChildColSizing(66.66%);
+			}
+		}
+	}
+
+	@for $i from 1 through 20 {
+		$value: $i * 5;
+		$valueExt: #{$value + '%'};
+		$flexValueSelector: '#{$flexNameSelector}="#{$value}"';
+
+		@debug '#{$value}, #{$valueExt}, #{$flexValueSelector}';
+
+		[#{$flexValueSelector}] {
+			@include flexChildRowSizing($valueExt);
+		}
+
+		[#{$flexDirectionName}="row"] {
+			> [#{$flexValueSelector}] {
+				@include flexChildRowSizing($valueExt);
+			}
+		}
+
+		[#{$flexDirectionName}="column"] {
+			> [#{$flexValueSelector}] {
+				@include flexChildColSizing($valueExt);
+			}
+		}
+
+		@if $name != null {
+			[#{$flexDirectionNameSelector}="row"] {
+				> [#{$flexValueSelector}] {
+					@include flexChildRowSizing($valueExt);
+				}
+			}
+
+			[#{$flexDirectionNameSelector}="column"] {
+				> [#{$flexValueSelector}] {
+					@include flexChildColSizing($valueExt);
+				}
+			}
+		}
+	}
+}
+
+@mixin flexByBreakpoint($breakpoint: null) {
+	@include flexChildByBreakpoint($breakpoint);
+}
+
+$layout-breakpoint-xs: 600px !default;
+$layout-breakpoint-sm: 960px !default;
+$layout-breakpoint-md: 1280px !default;
+$layout-breakpoint-lg: 1920px !default;
+
+@include flexByBreakpoint();
+
+@media (min-width: $layout-breakpoint-xs) {
+	@include flexByBreakpoint(gt-xs);
+}
+
+@media (min-width: $layout-breakpoint-sm) {
+	@include flexByBreakpoint(gt-sm);
+}
+
+@media (min-width: $layout-breakpoint-md) {
+	@include flexByBreakpoint(gt-md);
+}
+
+@media (min-width: $layout-breakpoint-lg) {
+	@include flexByBreakpoint(gt-lg);
+}

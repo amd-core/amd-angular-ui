@@ -1,0 +1,52 @@
+{
+  "name": "angular-2-ui-components",
+  "version": "1.0.0",
+  "description": "Angular 2 UI Components",
+  "main": "build/index.html",
+  "scripts": {
+    "build": "webpack --progress --bail",
+    "start": "webpack-dev-server --progress"
+  },
+  "author": "Nathan Mc Grath <mcgrath.nathan@yahoo.ie>",
+  "repository": {
+    "type": "git",
+    "url": ""
+  },
+  "license": "ISC",
+  "dependencies": {
+    "@angular/common": "2.0.0-rc.6",
+    "@angular/compiler": "2.0.0-rc.6",
+    "@angular/core": "2.0.0-rc.6",
+    "@angular/forms": "2.0.0-rc.6",
+    "@angular/platform-browser": "2.0.0-rc.6",
+    "@angular/platform-browser-dynamic": "2.0.0-rc.6",
+    "@types/core-js": "0.9.32",
+    "@types/node": "6.0.38",
+    "@types/rx": "2.5.31",
+    "@types/webpack": "1.12.33",
+    "@types/zone.js": "0.0.26",
+    "amd-flex-grid": "git+ssh://git@bitbucket.org/AniMunDev/amd-flex-grid.git",
+    "autoprefixer": "^6.4.0",
+    "codelyzer": "0.0.28",
+    "core-js": "^2.4.1",
+    "css-loader": "^0.24.0",
+    "css-to-string-loader": "^0.1.1",
+    "file-loader": "^0.9.0",
+    "html-loader": "^0.4.3",
+    "html-webpack-plugin": "^2.22.0",
+    "node-sass": "^3.8.0",
+    "normalize.css": "^4.2.0",
+    "postcss-loader": "^0.11.0",
+    "reflect-metadata": "^0.1.8",
+    "rxjs": "^5.0.0-beta.11",
+    "sass-loader": "^4.0.0",
+    "style-loader": "^0.13.1",
+    "ts-loader": "^0.8.2",
+    "tslint": "^3.15.1",
+    "tslint-loader": "^2.1.5",
+    "typescript": "^2.0.0",
+    "webpack": "^1.13.2",
+    "webpack-dev-server": "^1.15.0",
+    "zone.js": "^0.6.17"
+  }
+}

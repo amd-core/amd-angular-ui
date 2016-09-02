@@ -1,0 +1,40 @@
+{
+	"compilerOptions": {
+		"target": "es5",
+		"module": "commonjs",
+		"moduleResolution": "node",
+
+		"emitDecoratorMetadata": true,
+		"experimentalDecorators": true,
+    "allowSyntheticDefaultImports": true,
+
+		"pretty": true,
+		"sourceMap": true,
+		"removeComments": true,
+
+		"baseUrl": "./src",
+		"rootDir": "./src",
+		"sourceRoot": "./src",
+		"outDir": "./dist",
+
+    "lib": [
+      "dom",
+      "es6"
+    ],
+    "types": [
+			"webpack",
+			"node"
+		]
+	},
+	"include": [
+		"src/**/*.ts"
+	],
+	"exclude": [
+		".vscode",
+		"config",
+		"coverage",
+		"node_modules",
+		"dist",
+		"**/*.spec.ts"
+	]
+}

@@ -1,0 +1,15 @@
+<div class="amd-content">
+	<h1>My First Angular 2 App</h1>
+	<form #msgForm="ngForm">
+		<amd-input
+			[value]="message" type="text" name="message"
+			autofocus required="true" maxlength="10" minlength="3"
+			[messages]="messageErrorMessages">
+			<div class="amd-input-label">Message</div>
+		</amd-input>
+	</form>
+	<br>
+	<div amd-flex>
+		<amd-button>My Button</amd-button>
+	</div>
+</div>
