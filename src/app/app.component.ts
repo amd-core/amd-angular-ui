@@ -1,4 +1,5 @@
 import { Component, ViewEncapsulation } from '@angular/core';
+import { AmdSidenavService } from '../amd-sidenav';
 
 let AppComponentTemplate: string = require('./app.component.html');
 
@@ -20,4 +21,22 @@ export class AmdAppComponent {
 			value: 'This field has a minlength of 3'
 		}
 	];
+
+	private amdSidenavService: AmdSidenavService;
+
+	constructor(amdSidenavService: AmdSidenavService) {
+		this.amdSidenavService = amdSidenavService;
+	}
+
+	public toggleSidenav(): void {
+		this.amdSidenavService.toggle('sidenav');
+	}
+
+	public openSidenav(): void {
+		this.amdSidenavService.open('sidenav');
+	}
+
+	public closeSidenav(): void {
+		this.amdSidenavService.close('sidenav');
+	}
 }

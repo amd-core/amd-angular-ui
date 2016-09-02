@@ -2,6 +2,7 @@
 require('core-js');
 require('reflect-metadata');
 require('zone.js');
+require('web-animations-js');
 
 // app
 require('./main.scss');

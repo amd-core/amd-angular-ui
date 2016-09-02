@@ -5,3 +5,8 @@ $active-color: $green;
 $warn-color: $red;
 $transition: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 $font-family: Verdana, Geneva, sans-serif;
+
+$screen-xs-min: 600px !default;
+$screen-sm-min: 960px !default;
+$screen-md-min: 1280px !default;
+$screen-lg-min: 1920px !default;

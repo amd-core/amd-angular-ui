@@ -10,6 +10,18 @@
 	</form>
 	<br>
 	<div amd-flex>
-		<amd-button>My Button</amd-button>
+		<amd-button (click)="toggleSidenav()">
+			Toggle Sidenav
+		</amd-button>
 	</div>
 </div>
+
+<amd-sidenav [sidenavId]="'sidenav'">
+	I am the sidenav
+	<ul>
+		<li>Menu Item 1</li>
+		<li>Menu Item 1</li>
+		<li>Menu Item 1</li>
+		<li>Menu Item 1</li>
+	</ul>
+</amd-sidenav>

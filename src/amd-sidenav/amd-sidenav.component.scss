@@ -1,0 +1,58 @@
+@import '../styles/variables';
+@import '../styles/responsive-mixins';
+
+div.amd-sidenav {
+	div.amd-sidenav-backdrop {
+		background-color: $black;
+		opacity: 0;
+		position: absolute;
+		top: 0;
+		left: 0;
+		bottom: 0;
+		right: 0;
+		transition: opacity $transition, visibility $transition;
+		visibility: hidden;
+	}
+
+	div.amd-sidenav-content {
+		padding: 10px;
+		background-color: $white;
+		position: absolute;
+		top: 0;
+		left: 0;
+		bottom: 0;
+		transform: translateX(-100%);
+		transition: transform $transition, visibility $transition;
+		visibility: hidden;
+		right: 0;
+
+		@include gt-xs() {
+			right: 30%;
+		}
+
+		@include gt-sm() {
+			right: 50%;
+		}
+
+		@include gt-md() {
+			right: 60%;
+		}
+
+		@include gt-lg() {
+			right: 70%;
+		}
+	}
+
+	&.isOpen {
+		div.amd-sidenav-backdrop {
+			opacity: 0.6;
+			cursor: pointer;
+			visibility: visible;
+		}
+
+		div.amd-sidenav-content {
+			transform: translateX(0);
+			visibility: visible;
+		}
+	}
+}
