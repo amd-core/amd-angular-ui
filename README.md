@@ -6,11 +6,53 @@ This project is an Angular 2 UI Component Library.
 
 * Native Angular2 DOM manipulation
 * Pure CSS driven animation
+* Customisable
+* Themeable
 
 ## TODO ##
 
-- [x] Input
-- [] Button
+### Global ###
+
+- CSS Reset
+- Default Theme
+- Material Theme
+- Theme Import
+- Theme Customisation
+- Unit Testing
+- e2e Testing
+
+### Components ###
+
+- Input
+	- Component
+	- CSS Reset
+	- Default Theme
+	- Material Theme
+	- Unit Tests
+	- e2e Tests
+- Button
+	- Component
+	- CSS Reset
+	- Default Theme
+	- Material Theme
+	- Unit Tests
+	- e2e Tests
+- Sidenav
+	- Component
+	- Service
+	- CSS Reset
+	- Default Theme
+	- Material Theme
+	- Unit Tests
+	- e2e Tests
+- Dialog
+	- Component
+	- Service
+	- CSS Reset
+	- Default Theme
+	- Material Theme
+	- Unit Tests
+	- e2e Tests
 
 ## Setup ##
 

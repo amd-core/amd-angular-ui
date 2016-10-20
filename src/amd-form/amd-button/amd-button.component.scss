@@ -16,7 +16,7 @@ button {
 	margin: 0;
 	padding: 0 16px;
 	line-height: 36px;
-	border-radius: 2px;
+	border-radius: $border-radius;
 	transition: box-shadow $transition, background-color $transition;
 	background-color: $active-color;
 

@@ -11,6 +11,7 @@
 	<input
 		#input
 		#inputModel="ngModel"
+		[(ngModel)]="value"
 		[attr.type]="type"
 		[attr.name]="name"
 		[attr.id]="name"
@@ -22,8 +23,7 @@
 		[required]="required"
 		(focus)="onFocus($event)"
 		(blur)="onBlur($event)"
-		(change)="onChange($event)"
-		[(ngModel)]="value">
+		(change)="onChange($event)">
 
 	<div
 		class="amd-input-error-messages"

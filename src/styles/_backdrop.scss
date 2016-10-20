@@ -1,0 +1,20 @@
+@import 'colors';
+@import 'variables';
+
+@mixin amd-backdrop-hidden() {
+	background-color: $black;
+	opacity: 0;
+	position: absolute;
+	top: 0;
+	left: 0;
+	bottom: 0;
+	right: 0;
+	transition: opacity $transition, visibility $transition;
+	visibility: hidden;
+}
+
+@mixin amd-backdrop-visible() {
+	opacity: 0.6;
+	cursor: pointer;
+	visibility: visible;
+}

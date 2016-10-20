@@ -1,10 +1,11 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, ViewEncapsulation } from '@angular/core';
 import { AmdSidenavService } from './amd-sidenav.service';
 
 @Component({
 	selector: 'amd-sidenav',
 	template: require('./amd-sidenav.component.html'),
-	styles: [require('./amd-sidenav.component.scss')]
+	styles: [require('./amd-sidenav.component.scss')],
+	encapsulation: ViewEncapsulation.Native
 })
 export class AmdSidenavComponent {
 
