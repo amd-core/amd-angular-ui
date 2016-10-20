@@ -2,7 +2,7 @@
   "name": "amd-ng2-ui",
   "version": "1.0.0",
   "description": "Angular 2 UI Components",
-  "main": "build/index.html",
+  "main": "src/index.ts",
   "scripts": {
     "build": "webpack --progress --bail",
     "start": "webpack-dev-server --progress"
