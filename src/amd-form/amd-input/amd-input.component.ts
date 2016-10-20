@@ -7,7 +7,7 @@ import {
 
 let AmdInputComponentTemplate: string = require('./amd-input.component.html');
 
-interface IErrorMessage {
+export interface IErrorMessage {
 	key: string;
 	value: string;
 }

@@ -2,10 +2,11 @@
   "name": "amd-ng2-ui",
   "version": "1.0.0",
   "description": "Angular 2 UI Components",
-  "main": "src/index.ts",
+  "main": "dist/index",
   "scripts": {
-    "build": "webpack --progress --bail",
-    "start": "webpack-dev-server --progress"
+    "build": "tsc",
+    "build:demo": "webpack --progress --bail",
+    "start:demo": "webpack-dev-server --progress"
   },
   "author": "Nathan Mc Grath <mcgrath.nathan@yahoo.ie>",
   "repository": {
