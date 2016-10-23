@@ -11,7 +11,7 @@ var loaders = require('./config/webpack.loaders.js');
 var config = {
 	target: 'web',
 	entry: {
-		'app': './src/main.ts',
+		'app': './src/index.ts',
 	},
 	output: {
 		path: './dist/',

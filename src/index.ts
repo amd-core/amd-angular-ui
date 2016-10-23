@@ -15,3 +15,7 @@ import { AmdDialogModule } from './amd-dialog';
 	providers: [ AmdSidenavService ]
 })
 export class AmdNg2UiModule { }
+
+export * from './amd-dialog';
+export * from './amd-form';
+export * from './amd-sidenav';

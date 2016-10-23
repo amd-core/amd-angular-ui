@@ -4,21 +4,13 @@
 		"module": "commonjs",
 		"moduleResolution": "node",
 		"declaration": true,
-
 		"emitDecoratorMetadata": true,
 		"experimentalDecorators": true,
     "allowSyntheticDefaultImports": true,
-
 		"pretty": true,
-		"sourceMap": true,
 		"removeComments": true,
-
 		"baseUrl": "./src",
 		"rootDir": "./src",
-		"sourceRoot": "./src",
-		"outDir": "./dist",
-		"declarationDir": "./dist",
-
     "lib": [
       "dom",
       "es6"
