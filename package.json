@@ -2,7 +2,8 @@
   "name": "amd-ng2-ui",
   "version": "1.0.0",
   "description": "Angular 2 UI Components",
-  "main": "lib/",
+  "main": "lib/index",
+  "typings": "lib/index",
   "scripts": {
     "build": "gulp build",
     "build:webpack-old": "webpack --progress --bail",
