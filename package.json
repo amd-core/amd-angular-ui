@@ -4,7 +4,6 @@
   "description": "Angular 2 UI Components",
   "main": "lib/",
   "scripts": {
-    "postinstall": "npm run build",
     "build": "gulp build",
     "build:webpack-old": "webpack --progress --bail",
     "start:demo": "webpack-dev-server --progress"

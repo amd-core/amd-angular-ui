@@ -1,0 +1,23 @@
+@import 'variables';
+
+@mixin media-query($target-width) {
+	@media all and (min-width: $target-width) {
+		@content;
+	}
+}
+
+@mixin gt-xs() {
+	@include media-query($screen-xs-min) { @content; }
+}
+
+@mixin gt-sm() {
+	@include media-query($screen-sm-min) { @content; }
+}
+
+@mixin gt-md() {
+	@include media-query($screen-md-min) { @content; }
+}
+
+@mixin gt-lg() {
+	@include media-query($screen-lg-min) { @content; }
+}

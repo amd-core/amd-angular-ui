@@ -1,0 +1,49 @@
+@import '../styles/variables';
+@import '../styles/responsive-mixins';
+@import '../styles/backdrop';
+
+div.amd-sidenav {
+	div.amd-sidenav-backdrop {
+		@include amd-backdrop-hidden();
+	}
+
+	div.amd-sidenav-content {
+		padding: 10px;
+		background-color: $white;
+		position: absolute;
+		top: 0;
+		left: 0;
+		bottom: 0;
+		right: 0;
+		transform: translateX(-100%);
+		transition: transform $transition, visibility $transition;
+		visibility: hidden;
+
+		@include gt-xs() {
+			right: 30%;
+		}
+
+		@include gt-sm() {
+			right: 50%;
+		}
+
+		@include gt-md() {
+			right: 60%;
+		}
+
+		@include gt-lg() {
+			right: 70%;
+		}
+	}
+
+	&.isOpen {
+		div.amd-sidenav-backdrop {
+			@include amd-backdrop-visible();
+		}
+
+		div.amd-sidenav-content {
+			transform: translateX(0);
+			visibility: visible;
+		}
+	}
+}

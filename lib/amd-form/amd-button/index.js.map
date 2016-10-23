@@ -1,0 +1,1 @@
+{"version":3,"sources":["amd-form/amd-button/index.ts"],"names":[],"mappings":";;;;AAAA,iBAAc,qBAAqB,CAAC,EAAA","file":"index.js","sourcesContent":["export * from './amd-button.module';\r\n"]}
