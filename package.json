@@ -2,7 +2,7 @@
   "name": "amd-ng2-ui",
   "version": "1.0.0",
   "description": "Angular 2 UI Components",
-  "main": "dist/index",
+  "main": "lib/",
   "scripts": {
     "postinstall": "npm run build",
     "build": "gulp build",
