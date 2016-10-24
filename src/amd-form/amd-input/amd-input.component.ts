@@ -1,8 +1,7 @@
 import {
 	Component,
 	OnInit,
-	Input,
-	ViewEncapsulation
+	Input
 } from '@angular/core';
 
 let AmdInputComponentTemplate: string = require('./amd-input.component.html');
@@ -15,8 +14,7 @@ export interface IErrorMessage {
 @Component({
 	selector: 'amd-input',
 	template: AmdInputComponentTemplate,
-	styles: [require('./amd-input.component.scss')],
-	encapsulation: ViewEncapsulation.Native
+	styles: [require('./amd-input.component.scss')]
 })
 export class AmdInputComponent implements OnInit {
 

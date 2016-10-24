@@ -1,10 +1,9 @@
-import { Component, ViewEncapsulation } from '@angular/core';
+import { Component } from '@angular/core';
 
 @Component({
 	selector: 'amd-dialog',
 	template: require('./amd-dialog.component.html'),
-	styles: [ require('./amd-dialog.component.scss') ],
-	encapsulation: ViewEncapsulation.Native
+	styles: [ require('./amd-dialog.component.scss') ]
 })
 export class AmdDialogComponent { 
 
