@@ -1,1 +1,0 @@
-{"version":3,"sources":["amd-dialog/index.ts"],"names":[],"mappings":";;;;AAAA,iBAAc,qBAAqB,CAAC,EAAA","file":"index.js","sourcesContent":["export * from './amd-dialog.module';\r\n"]}

@@ -20,6 +20,7 @@ This project is an Angular 2 UI Component Library.
 - Theme Customisation
 - Unit Testing
 - e2e Testing
+- Output es6 modules: https://github.com/webpack/webpack/issues/2933
 
 ### Components ###
 

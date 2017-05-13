@@ -1,1 +1,0 @@
-{"version":3,"sources":["amd-form/index.ts"],"names":[],"mappings":";;;;AAAA,iBAAc,mBAAmB,CAAC,EAAA","file":"index.js","sourcesContent":["export * from './amd-form.module';\r\n"]}

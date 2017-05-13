@@ -1,1 +1,0 @@
-{"version":3,"sources":["amd-sidenav/index.ts"],"names":[],"mappings":";;;;AAAA,iBAAc,sBAAsB,CAAC,EAAA;AACrC,iBAAc,uBAAuB,CAAC,EAAA","file":"index.js","sourcesContent":["export * from './amd-sidenav.module';\r\nexport * from './amd-sidenav.service';\r\n"]}

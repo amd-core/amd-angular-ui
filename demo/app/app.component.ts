@@ -1,13 +1,9 @@
-import { Component, ViewEncapsulation } from '@angular/core';
-import { AmdSidenavService } from '../amd-sidenav';
-
-let AppComponentTemplate: string = require('./app.component.html');
+import { Component } from '@angular/core';
+import { AmdSidenavService } from '@amd-core/angular-ui';
 
 @Component({
 	selector: 'amd-app',
-	template: AppComponentTemplate,
-	styles: [require('./app.component.scss')],
-	encapsulation: ViewEncapsulation.Native
+	templateUrl: './app.component.html'
 })
 export class AmdAppComponent {
 	public message: string = undefined;

@@ -3,14 +3,14 @@
 		"target": "es5",
 		"module": "commonjs",
 		"moduleResolution": "node",
-		"declaration": true,
 		"emitDecoratorMetadata": true,
 		"experimentalDecorators": true,
     "allowSyntheticDefaultImports": true,
 		"pretty": true,
 		"removeComments": true,
-		"baseUrl": "./src",
-		"rootDir": "./src",
+		"allowJs": true,
+		"baseUrl": ".",
+		"rootDir": ".",
     "lib": [
       "dom",
       "es6"
@@ -18,10 +18,13 @@
     "types": [
 			"webpack",
 			"node"
-		]
+		],
+		"paths": {
+			"@amd-core/*": ["./dist/@amd-core/*"]
+		}
 	},
 	"include": [
-		"src/**/*.ts"
+		"demo/**/*.ts"
 	],
 	"exclude": [
 		".vscode",
