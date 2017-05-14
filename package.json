@@ -3,7 +3,7 @@
   "version": "0.0.1",
   "description": "An Angular UI component framework by AMD Core",
   "scripts": {
-    "build:ui-components": "webpack --progress --bail --config=packages/ui-components/webpack.config.js",
+    "build": "webpack --progress --bail --config=packages/ui-components/webpack.config.js",
     "build:demo": "webpack --progress --bail",
     "start:demo": "webpack-dev-server --progress"
   },
