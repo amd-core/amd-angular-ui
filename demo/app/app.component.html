@@ -1,31 +1,32 @@
 <div class="amd-content">
-	<h1>My First Angular 2 App</h1>
-	<form #msgForm="ngForm">
-		<amd-input
-			[value]="message" type="text" name="message"
-			autofocus required="true" maxlength="10" minlength="3"
-			[messages]="messageErrorMessages">
-			<div class="amd-input-label">Message</div>
-		</amd-input>
-	</form>
-	<br>
-	<div amd-flex>
-		<amd-button (click)="toggleSidenav()">
-			Toggle Sidenav
-		</amd-button>
-	</div>
+  <h1>My First Angular 2 App</h1>
+  <form #msgForm="ngForm">
+    <amd-input [value]="message" type="text" name="message" autofocus required="true" maxlength="10" minlength="3" [messages]="messageErrorMessages">
+      <div class="amd-input-label">Message</div>
+    </amd-input>
+  </form>
+  <br>
+  <div amd-flex>
+    <button amd-button class="button-primary" (click)="toggleSidenav()">
+      Primary Button
+    </button>
+
+    <button amd-button class="button-secondary" (click)="toggleSidenav()">
+      Secondary Button
+    </button>
+  </div>
 </div>
 
 <amd-dialog>
-	<div>This is the dialog content</div>
+  <div>This is the dialog content</div>
 </amd-dialog>
 
 <amd-sidenav [sidenavId]="'sidenav'">
-	I am the sidenav
-	<ul>
-		<li>Menu Item 1</li>
-		<li>Menu Item 1</li>
-		<li>Menu Item 1</li>
-		<li>Menu Item 1</li>
-	</ul>
+  I am the sidenav
+  <ul>
+    <li>Menu Item 1</li>
+    <li>Menu Item 1</li>
+    <li>Menu Item 1</li>
+    <li>Menu Item 1</li>
+  </ul>
 </amd-sidenav>

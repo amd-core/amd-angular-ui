@@ -1,0 +1,22 @@
+$transition: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+
+@mixin amd-backdrop {
+  background-color: black;
+	position: absolute;
+	top: 0;
+	left: 0;
+	bottom: 0;
+	right: 0;
+	transition: opacity $transition, visibility $transition;
+}
+
+@mixin amd-backdrop-hidden {
+	opacity: 0;
+	visibility: hidden;
+}
+
+@mixin amd-backdrop-visible {
+	opacity: 0.6;
+	cursor: pointer;
+	visibility: visible;
+}

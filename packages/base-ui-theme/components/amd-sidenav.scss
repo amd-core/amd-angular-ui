@@ -1,15 +1,17 @@
-@import '../styles/variables';
 @import '../styles/responsive-mixins';
-@import '../styles/backdrop';
+@import '../styles/backdrop-mixins';
+
+$transition: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 
 div.amd-sidenav {
 	div.amd-sidenav-backdrop {
+    @include amd-backdrop();
 		@include amd-backdrop-hidden();
 	}
 
 	div.amd-sidenav-content {
 		padding: 10px;
-		background-color: $white;
+		background-color: white;
 		position: absolute;
 		top: 0;
 		left: 0;

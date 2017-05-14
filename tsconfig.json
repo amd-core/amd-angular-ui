@@ -1,37 +1,39 @@
 {
-	"compilerOptions": {
-		"target": "es5",
-		"module": "commonjs",
-		"moduleResolution": "node",
-		"emitDecoratorMetadata": true,
-		"experimentalDecorators": true,
+  "compilerOptions": {
+    "target": "es5",
+    "module": "commonjs",
+    "moduleResolution": "node",
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
     "allowSyntheticDefaultImports": true,
-		"pretty": true,
-		"removeComments": true,
-		"allowJs": true,
-		"baseUrl": ".",
-		"rootDir": ".",
+    "pretty": true,
+    "removeComments": true,
+    "allowJs": true,
+    "baseUrl": ".",
+    "rootDir": ".",
     "lib": [
       "dom",
       "es6"
     ],
     "types": [
-			"webpack",
-			"node"
-		],
-		"paths": {
-			"@amd-core/*": ["./dist/@amd-core/*"]
-		}
-	},
-	"include": [
-		"demo/**/*.ts"
-	],
-	"exclude": [
-		".vscode",
-		"config",
-		"coverage",
-		"node_modules",
-		"dist",
-		"**/*.spec.ts"
-	]
+      "webpack",
+      "node"
+    ],
+    "paths": {
+      "@amd-core/angular-ui": [
+        "./dist/amd-angular-ui"
+      ]
+    }
+  },
+  "include": [
+    "demo/**/*.ts"
+  ],
+  "exclude": [
+    ".vscode",
+    "config",
+    "coverage",
+    "node_modules",
+    "dist",
+    "**/*.spec.ts"
+  ]
 }

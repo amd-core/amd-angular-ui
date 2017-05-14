@@ -1,14 +1,5 @@
 # AMD-NG2-UI #
 
-This project is an Angular 2 UI Component Library.
-
-## Features ##
-
-* Native Angular2 DOM manipulation
-* Pure CSS driven animation
-* Customisable
-* Themeable
-
 ## TODO ##
 
 ### Global ###

@@ -2,11 +2,9 @@
   "name": "amd-angular-ui-src",
   "version": "0.0.1",
   "description": "An Angular UI component framework by AMD Core",
-  "main": "lib/index",
-  "typings": "lib/index",
   "scripts": {
-    "build": "gulp build",
-    "build:webpack-old": "webpack --progress --bail",
+    "build:ui-components": "webpack --progress --bail --config=packages/ui-components/webpack.config.js",
+    "build:demo": "webpack --progress --bail",
     "start:demo": "webpack-dev-server --progress"
   },
   "contributors": [
@@ -42,6 +40,7 @@
     "angular2-template-loader": "0.6.2",
     "autoprefixer": "7.0.1",
     "bootstrap-4": "4.0.0",
+    "clean-webpack-plugin": "^0.1.16",
     "codelyzer": "3.0.1",
     "copy-webpack-plugin": "^4.0.1",
     "css-loader": "0.28.1",

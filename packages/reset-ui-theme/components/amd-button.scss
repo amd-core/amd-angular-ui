@@ -1,0 +1,17 @@
+@import '../styles/reset-mixins';
+
+button {
+	background: transparent;
+	cursor: pointer;
+	user-select: none;
+	outline: none;
+	border: none;
+	text-decoration: none;
+  padding: 10px;
+
+  @include appearance(none);
+
+  &:focus {
+    outline: none;
+  }
+}
