@@ -17,7 +17,6 @@ module.exports = {
     historyApiFallback: true
   },
   resolve: {
-    // mainFields: ["es2015", "module", "main"],
     modules: [Path.resolve(__dirname, 'dist'), 'node_modules'],
     extensions: ['.ts', '.js'],
     alias: {

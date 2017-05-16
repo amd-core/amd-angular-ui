@@ -111,10 +111,4 @@ module.exports = [
       libraryTarget: 'umd'
     }
   })
-  // Merge(CommonConfig, {
-  //   output: {
-  //     filename: '[name].module.js',
-  //     libraryTarget: 'es6' | 'es2015' | 'module' // waiting on this: https://github.com/webpack/webpack/issues/2933
-  //   }
-  // })
 ];
