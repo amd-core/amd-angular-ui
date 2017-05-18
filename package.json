@@ -3,11 +3,9 @@
   "version": "0.0.1",
   "description": "An Angular UI component framework by AMD Core",
   "scripts": {
-    "build": "webpack --progress --bail --config=packages/ui-components/webpack.config.js",
+    "build": "gulp",
     "build:demo": "webpack --progress --bail",
-    "start:demo": "webpack-dev-server --progress",
-    "ngc": "ngc -p packages/ui-components/tsconfig.build.json",
-    "rollup": "rollup -c packages/ui-components/rollup.config.js"
+    "start:demo": "webpack-dev-server --progress"
   },
   "contributors": [
     {
@@ -46,6 +44,8 @@
     "@types/webpack-env": "^1.13.0",
     "angular2-template-loader": "0.6.2",
     "autoprefixer": "7.0.1",
+    "babel-plugin-external-helpers": "^6.22.0",
+    "babel-preset-es2015": "^6.24.1",
     "bootstrap-4": "4.0.0",
     "clean-webpack-plugin": "^0.1.16",
     "codelyzer": "3.0.1",

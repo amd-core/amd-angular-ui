@@ -61,9 +61,7 @@ function createES5Bundle () {
     dest: path.resolve(bundleDir, 'amd-angular-ui.es5.js'),
     format: 'es',
     plugins: [
-      babel({
-        exclude: 'node_modules/**'
-      })
+      babel()
     ]
   });
 }
@@ -73,9 +71,7 @@ function createUMDBundle () {
     dest: path.resolve(bundleDir, 'amd-angular-ui.umd.js'),
     format: 'umd',
     plugins: [
-      babel({
-        exclude: 'node_modules/**'
-      })
+      babel()
     ]
   });
 }
