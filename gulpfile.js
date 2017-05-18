@@ -153,5 +153,6 @@ gulp.task('bundle', ['inline'], (done) => {
 gulp.task('default', [
   'clean:pre', 'copy', 'sass',
   'ngc', 'inline', 'metadata',
-  'bundle', 'clean:post'
+  'bundle',
+  // 'clean:post'
 ]);
