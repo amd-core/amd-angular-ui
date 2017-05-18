@@ -1,3 +1,3 @@
 export * from './amd-form.module';
-export * from './amd-button';
-export * from './amd-input';
+export * from './amd-button/index';
+export * from './amd-input/index';
