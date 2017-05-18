@@ -119,7 +119,7 @@ gulp.task('sass:base', ['clean:pre'], () => {
 gulp.task('sass', ['sass:reset', 'sass:base']);
 
 gulp.task('ngc', ['clean:pre'], (done) => {
-  exec(`ngc -p packages/ui-components/tsconfig.build.json`, (err, stdout, stderr) => {
+  exec(`ngc -p packages/ui-components/tsconfig.json`, (err, stdout, stderr) => {
     console.error(stderr);
     console.log(stdout);
     done(err);
