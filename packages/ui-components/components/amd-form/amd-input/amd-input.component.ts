@@ -36,11 +36,11 @@ export class AmdInputComponent implements OnInit {
 		// todo: init
 	}
 
-	public onFocus(): void {
+	public onFocus(event: Event): void {
 		this.isFocused = true;
 	}
 
-	public onBlur(): void {
+	public onBlur(event: Event): void {
 		this.isFocused = false;
 	}
 

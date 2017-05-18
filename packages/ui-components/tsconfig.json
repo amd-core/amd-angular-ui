@@ -1,16 +1,20 @@
 {
   "compilerOptions": {
-    "target": "es5",
-    "module": "es2015",
+    "target": "es2015",
+    "module": "es2015", 
     "moduleResolution": "node",
     "declaration": true,
-    "declarationDir": "../../typings",
+    "sourceMap": true,
+    "importHelpers": true,
+
+    "rootDir": "./components",
+    "outDir": "../../dist/amd-angular-ui/tmp",
+    "declarationDir": "../../dist/amd-angular-ui/typings",
+
     "emitDecoratorMetadata": true,
     "experimentalDecorators": true,
+
     "allowSyntheticDefaultImports": true,
-    "importHelpers": true,
-    "pretty": true,
-    "sourceMap": true,
     "allowUnreachableCode": false,
     "allowUnusedLabels": false,
     "alwaysStrict": true,
@@ -20,18 +24,14 @@
     "strictNullChecks": true,
     "noFallthroughCasesInSwitch": true,
     "skipLibCheck": true,
+
     "lib": [
       "dom",
       "es6"
-    ],
-    "types": [
-      "webpack",
-      "webpack-env",
-      "node"
     ]
   },
-  "include": [
-    "components/**/*.ts"
+  "files": [
+    "./components/index.ts"
   ],
   "exclude": [
     ".vscode",
@@ -41,5 +41,10 @@
     "build",
     "**/*.spec.ts",
     "**/*.aot.ts"
-  ]
+  ],
+  "angularCompilerOptions": {
+    "annotateForClosureCompiler": true,
+    "strictMetadataEmit": true,
+    "skipTemplateCodegen": true
+  }
 }
