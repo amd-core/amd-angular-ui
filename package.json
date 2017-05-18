@@ -30,7 +30,7 @@
     "zone.js": "0.8.10"
   },
   "devDependencies": {
-    "@amd-core/gulp-angular-inline": "^0.1.0",
+    "@amd-core/gulp-angular-inline": "^0.2.0",
     "@angular/compiler": "4.1.1",
     "@angular/compiler-cli": "^4.1.2",
     "@angular/material": "^2.0.0-beta.5",

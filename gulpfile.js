@@ -132,6 +132,7 @@ gulp.task('inline', ['ngc'], () => {
 
 gulp.task('metadata', ['ngc'], () => {
   return gulp.src(path.resolve(tmpDir, '**/*.metadata.json'))
+    .pipe(angularInline())
     .pipe(gulp.dest(typeDir));
 });
 
