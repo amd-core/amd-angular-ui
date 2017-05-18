@@ -45,6 +45,8 @@
   "angularCompilerOptions": {
     "annotateForClosureCompiler": true,
     "strictMetadataEmit": true,
+    "flatModuleOutFile": "entry.js",
+    "flatModuleId": "@amd-core/angular-ui",
     "skipTemplateCodegen": true
   }
 }

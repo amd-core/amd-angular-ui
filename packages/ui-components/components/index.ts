@@ -1,3 +1,3 @@
-export * from './amd-dialog';
-export * from './amd-form';
-export * from './amd-sidenav';
+export * from './amd-dialog/index';
+export * from './amd-form/index';
+export * from './amd-sidenav/index';

@@ -5,7 +5,7 @@
   "main": "./bundles/amd-angular-ui.umd.js",
   "module": "./bundles/amd-angular-ui.es5.js",
   "es2015": "./bundles/amd-angular-ui.js",
-  "typings": "./typings/index.d.ts",
+  "typings": "./typings/entry.d.ts",
   "contributors": [
     {
       "name": "Nathan Mc Grath",

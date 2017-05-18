@@ -9,6 +9,7 @@ const sass = require('gulp-sass');
 const concat = require('gulp-concat');
 const path = require('path');
 const angularInline = require('@amd-core/gulp-angular-inline');
+const tsc = require('@angular/tsc-wrapped').main;
 
 const packageDir = path.resolve('packages');
 const srcDir = path.resolve(packageDir, 'ui-components');
@@ -32,7 +33,7 @@ function createRollupBundle(config) {
   let bundleOptions = {
     context: 'this',
     external: Object.keys(ROLLUP_GLOBALS),
-    entry: path.resolve(typeDir, 'index.js'),
+    entry: path.resolve(typeDir, 'entry.js'),
     plugins: config.plugins
   };
 
@@ -114,34 +115,26 @@ gulp.task('sass:base', ['clean:pre'], () => {
 
 gulp.task('sass', ['sass:reset', 'sass:base']);
 
-gulp.task('ngc', ['clean:pre'], (done) => {
-  exec(`ngc -p packages/ui-components/tsconfig.json`, (err, stdout, stderr) => {
-    console.error(stderr);
-    console.log(stdout);
-    done(err);
-  });
+gulp.task('ngc', ['clean:pre'], () => {
+  return tsc(path.resolve(srcDir, 'tsconfig.json'), {basePath: srcDir});
 });
 
 gulp.task('inline', ['ngc'], () => {
   return gulp.src(path.resolve(tmpDir, '**/*.js'))
     .pipe(sourcemaps.init())
-    .pipe(angularInline())
+    .pipe(angularInline({
+      basePath: srcDir
+    }))
     .pipe(sourcemaps.write('./'))
     .pipe(gulp.dest(typeDir));
 });
 
-gulp.task('metadata', ['ngc'], () => {
+gulp.task('metadata', ['ngc', 'copy:html'], () => {
   return gulp.src(path.resolve(tmpDir, '**/*.metadata.json'))
-    .pipe(angularInline())
+    .pipe(angularInline({
+      basePath: srcDir
+    }))
     .pipe(gulp.dest(typeDir));
-});
-
-gulp.task('clean:post', ['inline', 'metadata'], () => {
-  return gulp.src([
-    tmpDir,
-    path.resolve(typeDir, '**/*.js'),
-    path.resolve(typeDir, '**/*.js.map')
-  ], { read: false }).pipe(clean());
 });
 
 gulp.task('bundle', ['inline'], (done) => {
@@ -150,9 +143,16 @@ gulp.task('bundle', ['inline'], (done) => {
     .then(createUMDBundle());
 });
 
+gulp.task('clean:post', ['inline', 'metadata', 'bundle'], () => {
+  return gulp.src([
+    tmpDir,
+    path.resolve(typeDir, '**/*.js'),
+    path.resolve(typeDir, '**/*.js.map')
+  ], { read: false }).pipe(clean());
+});
+
 gulp.task('default', [
   'clean:pre', 'copy', 'sass',
   'ngc', 'inline', 'metadata',
-  'bundle',
-  // 'clean:post'
+  'bundle', 'clean:post'
 ]);
