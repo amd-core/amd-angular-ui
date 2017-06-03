@@ -9,9 +9,11 @@ const concat = require('gulp-concat');
 const path = require('path');
 const angularInline = require('@amd-core/gulp-angular-inline');
 const ngc = require('@angular/tsc-wrapped').main;
+const tslint = require('gulp-tslint');
 
 const packageDir = path.resolve('packages');
 const srcDir = path.resolve(packageDir, 'ui-components');
+const srcCompDir = path.resolve(srcDir, 'components');
 
 const baseDistDir = path.resolve('dist');
 const distDir = path.resolve(baseDistDir, 'amd-angular-ui');
@@ -59,6 +61,18 @@ gulp.task('clean:pre', () => {
 });
 
 /**
+ * Lint Tasks
+ */
+
+gulp.task('lint:ts', () => {
+  return gulp.src(path.resolve(srcCompDir, '**/*.ts'))
+    .pipe(tslint({ formatter: 'verbose' }))
+    .pipe(tslint.report()) 
+});
+
+gulp.task('lint', ['lint:ts']);
+
+/**
  * SASS Tasks
  */
 
@@ -98,12 +112,12 @@ gulp.task('copy', ['clean:pre'], () => {
  */
 
 gulp.task('html:es5', ['clean:pre'], () => {
-  return gulp.src(path.resolve(srcDir, 'components', '**/*.html'))
+  return gulp.src(path.resolve(srcCompDir, '**/*.html'))
     .pipe(gulp.dest(es5Dist));
 });
 
 gulp.task('html:es6', ['clean:pre'], () => {
-  return gulp.src(path.resolve(srcDir, 'components', '**/*.html'))
+  return gulp.src(path.resolve(srcCompDir, '**/*.html'))
     .pipe(gulp.dest(es6Dist));
 });
 
@@ -113,11 +127,11 @@ gulp.task('html', ['html:es5', 'html:es6']);
  * Angular Compiler Tasks
  */
 
-gulp.task('ngc:es5', ['clean:pre'], () => {
+gulp.task('ngc:es5', ['clean:pre', 'lint:ts'], () => {
   return ngc(path.resolve(srcDir, 'tsconfig.es5.json'), { basePath: srcDir });
 });
 
-gulp.task('ngc:es6', ['clean:pre'], () => {
+gulp.task('ngc:es6', ['clean:pre', 'lint:ts'], () => {
   return ngc(path.resolve(srcDir, 'tsconfig.es6.json'), { basePath: srcDir });
 });
 

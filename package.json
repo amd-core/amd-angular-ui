@@ -48,6 +48,7 @@
     "gulp-concat": "^2.6.1",
     "gulp-sass": "^3.1.0",
     "gulp-sourcemaps": "^2.6.0",
+    "gulp-tslint": "^8.1.0",
     "node-sass": "^4.5.2",
     "npm-run": "^4.1.2",
     "rollup": "^0.41.6",
