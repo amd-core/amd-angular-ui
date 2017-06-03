@@ -1,0 +1,17 @@
+{
+  "extends": "./tsconfig.json",
+  "compilerOptions": {
+    "target": "es5",
+    "outDir": "../../dist/tmp/es5",
+    "declaration": true,
+    "declarationDir": "../../dist/tmp/es5"
+  },
+  "angularCompilerOptions": {
+    "annotateForClosureCompiler": true,
+    "strictMetadataEmit": true,
+    "flatModuleOutFile": "angular-ui.js",
+    "flatModuleId": "@amd-core/angular-ui",
+    "skipTemplateCodegen": true,
+    "genDir": "../../dist/tmp/es5"
+  }
+}
