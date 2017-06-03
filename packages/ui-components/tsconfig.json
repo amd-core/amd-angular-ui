@@ -1,15 +1,14 @@
 {
   "compilerOptions": {
-    "target": "es2015",
-    "module": "es2015", 
+    "target": "es6",
+    "module": "es6", 
     "moduleResolution": "node",
-    "declaration": true,
     "sourceMap": true,
     "importHelpers": true,
+    "baseUrl": "./",
 
     "rootDir": "./components",
-    "outDir": "../../dist/amd-angular-ui/tmp",
-    "declarationDir": "../../dist/amd-angular-ui/typings",
+    "outDir": "../../dist/tmp/es2015",
 
     "emitDecoratorMetadata": true,
     "experimentalDecorators": true,
@@ -28,7 +27,13 @@
     "lib": [
       "dom",
       "es6"
-    ]
+    ],
+
+    "paths": {
+      "@angular/*": [
+        "../../node_modules/@angular/*"
+      ]
+    }
   },
   "files": [
     "./components/index.ts"
@@ -41,12 +46,5 @@
     "build",
     "**/*.spec.ts",
     "**/*.aot.ts"
-  ],
-  "angularCompilerOptions": {
-    "annotateForClosureCompiler": true,
-    "strictMetadataEmit": true,
-    "flatModuleOutFile": "entry.js",
-    "flatModuleId": "@amd-core/angular-ui",
-    "skipTemplateCodegen": true
-  }
+  ]
 }
