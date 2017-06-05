@@ -2,9 +2,14 @@
   "compilerOptions": {
     "target": "es5",
     "experimentalDecorators": true,
-    "sourceMap": true
+    "sourceMap": true,
+    "lib": [
+      "dom",
+      "es6"
+    ]
   },
   "include": [
-    "components/**/*.ts"
+    "components/**/*.ts",
+    "test/**/*.ts"
   ]
 }

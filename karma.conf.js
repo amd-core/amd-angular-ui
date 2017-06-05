@@ -4,8 +4,12 @@ module.exports = function(config) {
     basePath: 'packages/ui-components',
     frameworks: ['jasmine', 'karma-typescript'],
     files: [
+      'components/index.spec.ts',
       {
         pattern: 'components/**/*.+(ts|html)'
+      },
+      {
+        pattern: 'test/**/*.ts'
       }
     ],
     exclude: [
