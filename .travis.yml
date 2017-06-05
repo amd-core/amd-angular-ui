@@ -8,10 +8,10 @@ env:
   - secure: p7MKvU5K3sZdCkdL/lVjWBrgS9BcGPCZx2gUgJE4EXaEXQdq6MY1UF5OdM4KqqLg2+VdKoOap1BSulToXWEaMTPZ3cq2gnSVXWQMtx0/7V6Id/H/hl/WLfrh8SiHuH9v9el5QqnSSjtC4kDnA23s9jo6aTgjqsCxOUtro29u+TjXiy7qmqKuqhc6yiChwBjF7gWjHpENKHjTSm+hp2p0buStkP//e1WDAAT0df12YR8SyJ/q1K6Dx2+LYeFRRnDhKDO7vBUd7dbb4RF6KBbC5v6uKPBY6/1kuM+8wpXAkfmu1R5JFoyLPPJp6eEc/+lGcDUxL5fituTlkGd3bF074Zl25t6ynkA5JyN16mf0/JHLh9wcwF1kHqnTtg0FwIbYuH1TkP3LN3ZrjQrh3q32WP69eXd7qytjhUeFaz1BwHnj4vf0MMPv+SsbcCGHK9fQ47JFogekmz4itOLFiEWYJdt1cL+dFPkhWMaZbkdevH20lRZJs0zQoBWyIZAWOW6K40FeDZrl7UdMpj71Y7IMVx1te7O31c1kRtLnsTqB641r6M97izzWCzDAa93dgF0GKk65GplaqWCZGc04zsIiOLbuxGbynsEka/nbADgfoMxWizNavzGr3gq1Kf6wtrYp7nQgBEoU2M/oDkJtXVeDAmYE3HY7/EHJsrynw4ASD8I=
 addons:
   code_climate:
-    repo_token: "${CODECLIMATE_TOKEN}"
+    repo_token: $CODECLIMATE_TOKEN
   browserstack:
-    username: "${BROWSERSTACK_USERNAME}"
-    access_key: "${BROWSERSTACK_ACCESS_KEY}"
+    username: $BROWSERSTACK_USERNAME
+    access_key: $BROWSERSTACK_ACCESS_KEY
 install:
 - npm prune
 - npm install
