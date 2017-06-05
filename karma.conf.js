@@ -24,6 +24,18 @@ module.exports = function(config) {
           require('karma-typescript-angular2-transform')
         ]
       },
+      reports: {
+        lcovonly: {
+          directory: 'coverage',
+          subdirectory: 'lcov',
+          filename: 'lcov.info'
+        },
+        html: {
+          directory: 'coverage',
+          subdirectory: 'html',
+          filename: 'report'
+        }
+      },
       compilerOptions: {
         lib: ['ES2015', 'DOM']
       },
