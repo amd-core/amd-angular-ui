@@ -1,21 +1,20 @@
 language: node_js
 node_js:
-  - "node"
-
+- node
 addons:
   code_climate:
-    repo_token: ${CodeClimateToken}
-
+    repo_token: "${CodeClimateToken}"
 install:
 - npm prune
 - npm install
 - npm update
-
 script:
 - npm run lint
 - npm run build
 - npm run test
-
 after_success:
 - npm install -g codeclimate-test-reporter
 - codeclimate-test-reporter < coverage/lcov/lcov.info
+env:
+  global:
+    secure: aaZtmJj8VXV1dNuHt7xhkwAkUw+d4+Slx9zBtW1UJHkthniXswtJ62hNWotVU8OsSXIHDZu5oD2XLuThpJ5u73fqQQs4TkdNDoUCB0wrI7FIYl0qcldveJGpKK4XHoWtNY1/0ox7qSI8z7ub084w8F9tV9GHNwzX3Jy/CRP7u2PiSSc+nW4ecJnlVCcW/0OKlI3ieM1OKjcGQcBfvAd0wcpgY2h8JhQcZUZgNpeAV6M/KeCb+FeTaaCVGj5Pd8alU49vlec1xg2x5VahC4qMIVEzE/klwVcSFrYbYmNEYncigvjNgJRvZ1k+7la7LBin11Z3lLkkqUgFHHlc6PNCh7sFH8UxNsrP23ObFn/gWNGzpqGKohUFBlkwDyea/LUjwa6/BFeCZ5ZxyGg2xpbmF0Q/IBbDUh6BzkRSCrVVtvz9eA9Lul4r8TGjaicCpO/oR6F+r9DXNb85EtzoBAkCdQRILuGimIY477fq7IaZlCYzstPqC6LEA5aUNDLp3X1AEbJ08kedPTwYRe10vnoIJqnkp3nvJLwNkIuMjL2rJ0kM5LvX/Mupr7X8uOgZUrgky8DGQC4RndPR5mZsf/GIATrgXvlKeLHxP2H/l+WGEXNhWsQC64AcMseqPGSR2gL/ZykOB/RcPtTEzMQd1BZB+GkwFW0jAdxgFdKN3OUaLUc=
