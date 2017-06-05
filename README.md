@@ -1,3 +1,6 @@
+[![Build Status](https://travis-ci.org/amd-core/amd-angular-ui.svg?branch=master)](https://travis-ci.org/amd-core/amd-angular-ui)
+[![npm version](https://badge.fury.io/js/%40amd-core%2Fangular-ui.svg)](https://badge.fury.io/js/%40amd-core%2Fangular-ui)
+
 # AMD Core - Angular UI #
 
 ## Overview ##
