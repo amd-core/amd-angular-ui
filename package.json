@@ -5,7 +5,10 @@
   "scripts": {
     "build": "gulp",
     "lint": "gulp lint",
-    "test": "karma start karma.conf.js"
+    "test": "karma start karma.conf.js",
+    "test:e2e": "protractor protractor.conf.js",
+    "webdriver:update": "webdriver-manager update",
+    "postinstall": "npm run webdriver:update"
   },
   "contributors": [
     {
@@ -39,6 +42,7 @@
     "@angular/router": "^4.1.2",
     "@types/jasmine": "^2.5.51",
     "@types/node": "7.0.18",
+    "@types/protractor": "^4.0.0",
     "@types/rx": "4.1.1",
     "autoprefixer": "7.0.1",
     "bootstrap-4": "4.0.0",
@@ -58,7 +62,9 @@
     "karma-typescript-angular2-transform": "^1.0.0",
     "node-sass": "^4.5.2",
     "npm-run": "^4.1.2",
+    "protractor": "^5.1.2",
     "rollup": "^0.41.6",
+    "ts-node": "^3.0.4",
     "tslint": "5.2.0",
     "typescript": "2.3.2"
   }
