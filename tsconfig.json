@@ -16,9 +16,9 @@
       "es6"
     ],
     "types": [
-      "webpack",
       "node",
-      "jasmine"
+      "jasmine",
+      "protractor"
     ],
     "paths": {
       "@amd-core/angular-ui": [

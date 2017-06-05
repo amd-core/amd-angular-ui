@@ -2,7 +2,6 @@ const gulp = require('gulp');
 const exec = require('npm-run');
 const clean = require('gulp-clean');
 const rollup = require('rollup');
-const babel = require('rollup-plugin-babel');
 const sourcemaps = require('gulp-sourcemaps');
 const sass = require('gulp-sass');
 const concat = require('gulp-concat');

@@ -3,9 +3,14 @@
   "version": "0.0.1",
   "description": "An Angular UI component framework by AMD Core",
   "scripts": {
+    "webdriver:update": "webdriver-manager update",
+    "webdriver:start": "webdriver-manager start",
+    "postinstall": "npm run webdriver:update",
     "build": "gulp",
     "lint": "gulp lint",
-    "test": "karma start karma.conf.js"
+    "test": "karma start karma.conf.js",
+    "test:e2e": "protractor protractor.conf.js",
+    "test:e2e:browserstack": "protractor config/protractor-browserstack.conf.js"
   },
   "contributors": [
     {
@@ -39,11 +44,11 @@
     "@angular/router": "^4.1.2",
     "@types/jasmine": "^2.5.51",
     "@types/node": "7.0.18",
+    "@types/protractor": "^4.0.0",
     "@types/rx": "4.1.1",
     "autoprefixer": "7.0.1",
-    "babel-plugin-external-helpers": "^6.22.0",
-    "babel-preset-es2015": "^6.24.1",
     "bootstrap-4": "4.0.0",
+    "browserstack-local": "^1.3.0",
     "codelyzer": "3.0.1",
     "deepmerge": "^1.3.2",
     "gulp": "^3.9.1",
@@ -60,8 +65,9 @@
     "karma-typescript-angular2-transform": "^1.0.0",
     "node-sass": "^4.5.2",
     "npm-run": "^4.1.2",
+    "protractor": "^5.1.2",
     "rollup": "^0.41.6",
-    "rollup-plugin-babel": "^2.7.1",
+    "ts-node": "^3.0.4",
     "tslint": "5.2.0",
     "typescript": "2.3.2"
   }
