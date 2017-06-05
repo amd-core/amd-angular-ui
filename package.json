@@ -64,7 +64,6 @@
     "npm-run": "^4.1.2",
     "protractor": "^5.1.2",
     "rollup": "^0.41.6",
-    "saucelabs": "^1.4.0",
     "ts-node": "^3.0.4",
     "tslint": "5.2.0",
     "typescript": "2.3.2"
