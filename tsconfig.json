@@ -17,7 +17,8 @@
     ],
     "types": [
       "webpack",
-      "node"
+      "node",
+      "jasmine"
     ],
     "paths": {
       "@amd-core/angular-ui": [

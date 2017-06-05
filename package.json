@@ -3,7 +3,8 @@
   "version": "0.0.1",
   "description": "An Angular UI component framework by AMD Core",
   "scripts": {
-    "build": "gulp"
+    "build": "gulp",
+    "test": "karma start karma.conf.js"
   },
   "contributors": [
     {
@@ -35,6 +36,7 @@
     "@angular/platform-browser": "4.1.1",
     "@angular/platform-browser-dynamic": "4.1.1",
     "@angular/router": "^4.1.2",
+    "@types/jasmine": "^2.5.51",
     "@types/node": "7.0.18",
     "@types/rx": "4.1.1",
     "autoprefixer": "7.0.1",
@@ -49,6 +51,12 @@
     "gulp-sass": "^3.1.0",
     "gulp-sourcemaps": "^2.6.0",
     "gulp-tslint": "^8.1.0",
+    "jasmine-core": "^2.6.2",
+    "karma": "^1.7.0",
+    "karma-jasmine": "^1.1.0",
+    "karma-phantomjs-launcher": "^1.0.4",
+    "karma-typescript": "^3.0.3",
+    "karma-typescript-angular2-transform": "^1.0.0",
     "node-sass": "^4.5.2",
     "npm-run": "^4.1.2",
     "rollup": "^0.41.6",
