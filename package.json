@@ -4,6 +4,7 @@
   "description": "An Angular UI component framework by AMD Core",
   "scripts": {
     "build": "gulp",
+    "lint": "gulp lint",
     "test": "karma start karma.conf.js"
   },
   "contributors": [

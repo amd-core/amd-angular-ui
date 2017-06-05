@@ -127,11 +127,11 @@ gulp.task('html', ['html:es5', 'html:es6']);
  * Angular Compiler Tasks
  */
 
-gulp.task('ngc:es5', ['clean:pre', 'lint:ts'], () => {
+gulp.task('ngc:es5', ['clean:pre'], () => {
   return ngc(path.resolve(srcDir, 'tsconfig.es5.json'), { basePath: srcDir });
 });
 
-gulp.task('ngc:es6', ['clean:pre', 'lint:ts'], () => {
+gulp.task('ngc:es6', ['clean:pre'], () => {
   return ngc(path.resolve(srcDir, 'tsconfig.es6.json'), { basePath: srcDir });
 });
 
