@@ -3,7 +3,7 @@ const browserstack = require('browserstack-local');
 
 exports.config = {
   framework: 'jasmine',
-  specs: ['packages/ui-components/test/e2e/spec.ts'],
+  specs: ['packages/ui-components/test/e2e/test.spec.ts'],
   seleniumAddress: 'http://hub-cloud.browserstack.com/wd/hub',
 
   commonCapabilities: {
