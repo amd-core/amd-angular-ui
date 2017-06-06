@@ -3,6 +3,9 @@
   "version": "0.0.1",
   "description": "An Angular UI component framework by AMD Core",
   "scripts": {
+    "webdriver:update": "webdriver-manager update",
+    "webdriver:start": "webdriver-manager start",
+    "postinstall": "npm run webdriver:update",
     "build": "gulp",
     "lint": "gulp lint",
     "test": "karma start karma.conf.js",
@@ -46,6 +49,7 @@
     "@types/rx": "4.1.1",
     "autoprefixer": "7.0.1",
     "bootstrap-4": "4.0.0",
+    "browserstack-local": "^1.3.0",
     "codelyzer": "3.0.1",
     "deepmerge": "^1.3.2",
     "gulp": "^3.9.1",

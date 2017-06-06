@@ -17,7 +17,8 @@
     ],
     "types": [
       "node",
-      "jasmine"
+      "jasmine",
+      "protractor"
     ],
     "paths": {
       "@amd-core/angular-ui": [
