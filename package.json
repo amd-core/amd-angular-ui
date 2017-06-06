@@ -10,7 +10,8 @@
     "lint": "gulp lint",
     "test": "karma start karma.conf.js",
     "test:e2e": "protractor protractor.conf.js",
-    "test:e2e:browserstack": "protractor config/protractor-browserstack.conf.js"
+    "webdriver:update": "webdriver-manager update",
+    "postinstall": "npm run webdriver:update"
   },
   "contributors": [
     {

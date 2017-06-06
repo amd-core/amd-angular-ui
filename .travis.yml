@@ -1,31 +1,27 @@
 language: node_js
 node_js:
 - node
-env:
-  global:
-  - BROWSERSTACK_USERNAME=nathanmcgrath1
-  - secure: lMcxaMqpUiHqSETuEUiOQTnuWL6frIZJw88ZXwMZLpgoBxj0wp30FuybCWVwSgschwskgZoADtx/llLKeFt4NOxSX+33ezhHOczRy1F7lwDobJ7BAk/GBkyLbE7NyLtdCCIhrjwS96bGdvCQwlAY9SDCEWP3zHQaln6TkeA2kxSYpnpo67BQmFXgiZzSsZmlDiEYh5B4eFbzMjFrzIGdeADHlsyKJYiSJWraEgAxXHOk3ijF/0xluH4sMjDSEDdX0v5eDmb17Hy3yZu/yx9uIIkPx901Y2WUn72xfaGp+C1Ww9uV1L9D2yVM6UnqO5b2afhI2nl3wTv+R2hT+aec7mtyDFetYtq74qfJ2+fdEqxni44PMyex26xxv5IyusET/Nfx42z2Zc+n1NWjrlJhvNXlNfJw1f0uUTWIGq/b4uLpUjPjvD2m0ZiKQk7rZ1EibpFE158dT2X6VHrZa6nk+PQLsuy2so6xeIvC3IbvCY0JYnJ/xR+A3Zn+XX3Hc7zW/IAKeDFRZRgyGlRfQkKzUYOIAoSZpyFLqMYvLJtVIMfPEuFiNARy0tcY/cXKEa2eBrszj7ojbA9NujkdyEf6KAEuTeAzru/jH/IqMoYVC8Mk0Yv4laYM1B6d8xCJOyKVK0qfqZeCt0/VfhWE8uZHVfrKb1ihL53T8PkbtjoQ9zo=
-  - secure: p7MKvU5K3sZdCkdL/lVjWBrgS9BcGPCZx2gUgJE4EXaEXQdq6MY1UF5OdM4KqqLg2+VdKoOap1BSulToXWEaMTPZ3cq2gnSVXWQMtx0/7V6Id/H/hl/WLfrh8SiHuH9v9el5QqnSSjtC4kDnA23s9jo6aTgjqsCxOUtro29u+TjXiy7qmqKuqhc6yiChwBjF7gWjHpENKHjTSm+hp2p0buStkP//e1WDAAT0df12YR8SyJ/q1K6Dx2+LYeFRRnDhKDO7vBUd7dbb4RF6KBbC5v6uKPBY6/1kuM+8wpXAkfmu1R5JFoyLPPJp6eEc/+lGcDUxL5fituTlkGd3bF074Zl25t6ynkA5JyN16mf0/JHLh9wcwF1kHqnTtg0FwIbYuH1TkP3LN3ZrjQrh3q32WP69eXd7qytjhUeFaz1BwHnj4vf0MMPv+SsbcCGHK9fQ47JFogekmz4itOLFiEWYJdt1cL+dFPkhWMaZbkdevH20lRZJs0zQoBWyIZAWOW6K40FeDZrl7UdMpj71Y7IMVx1te7O31c1kRtLnsTqB641r6M97izzWCzDAa93dgF0GKk65GplaqWCZGc04zsIiOLbuxGbynsEka/nbADgfoMxWizNavzGr3gq1Kf6wtrYp7nQgBEoU2M/oDkJtXVeDAmYE3HY7/EHJsrynw4ASD8I=
 addons:
-  code_climate:
-    repo_token: $CODECLIMATE_TOKEN
-#  browserstack:
-#    username: $BROWSERSTACK_USERNAME
-#    access_key: $BROWSERSTACK_ACCESS_KEY
+  code_climate: true
+  browserstack: true
+  sauce_connect: true
+  jwt: # Sauce Labs
+    secure: "glLJ0kkovazgIKqt5Hfh5pmWYE7ZHlGu8WuRsEjG+q5VNEOiKbETN/aiAccYIzwcrkEFuywIFAJfdIj21t7cBIb9R0YD15oZnV2QW6jMTRE61sFmigvLCJ6Q1Z15HM+KbgI9cxCfpSW2OIdQ4iLXiiB6FlLOrMl2CFtfb71N24ySizZ5N5lo/jPFxdvah6RIQ5O3NLivPyYegYHo7ckOuOi9qUgJ8lWh09pVGkn12RPOm+yfYHoD+SEUXuzoS7H55R9SCKh3bOPzuXyUcCt2p3lV5kdFEM6aJEcRlu2kp9yc5u8ht5jXRuk+DDRe2F6qo0wQQFKCRvfFjsHF9P/ix0tsBjLAP1a8VjY8oGWJn4siknLPRYu6FUzUQdFAQ+40MLieKtiwxxj5hQ1TJfiM8QlvhRU9oKkyoGsfb5EWXTpi/vx1OgUzppcN37+AGhYu8kvCCaTVMuT24PO7osfj9UXdaCP9XaG88cwt6KCgT3XjVLbh2ZBRtIow/bfHU17rHSUX4qoJnNpT2+hbxUr+xPU0GEEcdMhtoWF9u4vkAAW60Xyz95MMzB6HUEYyfCmjtAiYSBdIopBhe4+/PDtgOxDJ9e15eHLv2FpXD8TABy+wqPVRfusvsjKrG9sFfbL5ydXSQQPZYN4v6bPbSqdTjmcI2k9ia5mYca8AhginslY="
 install:
 - npm prune
 - npm install
 - npm update
-jobs:
-  include:
-  - stage: lint
-    script: npm run lint
-  - stage: build
-    script: npm run build
-  - stage: test
-    script: npm run test
-    after_success:
-    - npm install -g codeclimate-test-reporter
-    - codeclimate-test-reporter < coverage/lcov/lcov.info
-#  - stage: test:e2e
-#    script: npm run test:e2e:browserstack
+script:
+- npm run lint
+- npm run build
+- npm run test
+after_success:
+- npm install -g codeclimate-test-reporter
+- codeclimate-test-reporter < coverage/lcov/lcov.info
+env:
+  global:
+  # CodeClimate
+  - secure: FKZ9e8BDaR+Y8wrrkBLSi7JbPl6fm5Vk3LBvj7dydMsIXXoIgCF1Wd1uFDp0MkiwPGqi0cuKw/AfzM8h85FbHOMkVNYS3vO8Vc0vHWkc4rXqtEjjtceD0cFuhZzruSto5D8u2Ehc5o+6xLl48ycJJ68P+6941PchfXPEFYlRS2xQhmAHudjxmxaJgWd4qes3SyiAyZ3fkIHg84mOwPnX8mgXI74uo3sQ/bMghy3qQ5NZPvYRlrLr/qirVBOx0Yu2XLqDDZm/XdR9isnEwWmujJgRbbvZako4Zqg0b1W4vAlmPNu74NzaorZqaZHWsE0hPWY8Zur1pYaB5vKqzqR9xMFQYlZtbc73ts2q47rx106lyJsb5yz2cC4RfEh/0AqUDRfhtUBpI+yAFTWx/rUz9htiLFRhpi4g3lJpPsSx2mFkRyGrhv0XnnSfEp5IVEeazimRKDtIHm/r4t+Wna9Xz3XBvcoAIMzbwV7bcCbrAfisWdA+87001Qj2qTs6IC7VPzFonVhZrbpGkxPETE7c3X9MpF3OP5WAIyTzcViqykWUuFBXbbCDs95LmcBtUyP3ffuZqn4iuEdhMNf07bEWUiYec2U44m4K/zTUkNCI9wc/T3hzmKO7DO7gwOJ/P19v/pMthVz969HRuX1NEjZXm2DuBt3/2XrxH3yajhAl0EM=
+  - BROWSERSTACK_USER=nathanmcgrath1
+  - BROWSER_STACK_ACCESS_KEY=UdRqzqqrBufbTCQGqiK5
+  - SAUCE_USERNAME=AmdCore
