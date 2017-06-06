@@ -2,7 +2,7 @@ import { ComponentFixture, TestBed, async } from '@angular/core/testing';
 import { By } from '@angular/platform-browser';
 import { DebugElement } from '@angular/core';
 
-import { ElementHelpers } from '../../test';
+import { ElementHelpers } from '../../test/helpers';
 import { AmdDialogComponent } from './amd-dialog.component';
 
 describe('Component: amd-dialog', () => {

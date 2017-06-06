@@ -9,7 +9,7 @@ module.exports = function(config) {
         pattern: 'components/**/*.+(ts|html)'
       },
       {
-        pattern: 'test/**/*.ts'
+        pattern: 'test/helpers/**/*.ts'
       }
     ],
     exclude: [
