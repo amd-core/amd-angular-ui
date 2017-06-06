@@ -4,3 +4,4 @@ npm-debug*
 coverage
 dist
 *log
+*err
