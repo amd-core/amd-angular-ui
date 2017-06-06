@@ -7,8 +7,8 @@ exports.config = {
   seleniumAddress: 'http://hub-cloud.browserstack.com/wd/hub',
 
   commonCapabilities: {
-    'browserstack.user': 'nathanmcgrath1',
-    'browserstack.key': 'UdRqzqqrBufbTCQGqiK5',
+    'browserstack.user': process.env.BROWSERSTACK_USER,
+    'browserstack.key': process.env.BROWSER_STACK_ACCESS_KEY,
     'browserstack.local': true,
     'browserstack.debug': true,
     'build': 'AMD Core Angular UI',
