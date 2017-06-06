@@ -1,3 +1,5 @@
+#!/usr/bin/env bash
+
 cd ./demo
 npm prune
 npm install

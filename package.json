@@ -43,7 +43,6 @@
     "@angular/router": "^4.1.2",
     "@types/jasmine": "^2.5.51",
     "@types/node": "7.0.18",
-    "@types/protractor": "^4.0.0",
     "@types/rx": "4.1.1",
     "autoprefixer": "7.0.1",
     "bootstrap-4": "4.0.0",

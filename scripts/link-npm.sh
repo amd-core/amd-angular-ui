@@ -1,3 +1,5 @@
+#!/usr/bin/env bash
+
 cd dist/amd-angular-ui
 npm link
 cd ../../demo
