@@ -16,7 +16,9 @@ script:
 - npm run lint
 - npm run build
 - npm run test
+- chmod +x ./scripts/link-npm.sh
 - ./scripts/link-npm.sh
+- chmod +x ./scripts/run-demo.sh
 - ./scripts/run-demo.sh
 - npm run test:e2e:browserstack
 after_success:
