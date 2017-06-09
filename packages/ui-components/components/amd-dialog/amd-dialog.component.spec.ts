@@ -14,16 +14,14 @@ describe('Component: amd-dialog', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       declarations: [AmdDialogComponent]
-    }).compileComponents();
+    }).compileComponents().then(() => {
+      fixture = TestBed.createComponent(AmdDialogComponent);
+      component = fixture.componentInstance;
+      debugElement = fixture.debugElement;
+      element = debugElement.nativeElement;
+      fixture.detectChanges();
+    });
   }));
-
-  beforeEach(() => {
-    fixture = TestBed.createComponent(AmdDialogComponent);
-    component = fixture.componentInstance;
-    debugElement = fixture.debugElement;
-    element = debugElement.nativeElement;
-    fixture.detectChanges();
-  });
 
   describe('controller', () => {
     describe('constructor()', () => {
