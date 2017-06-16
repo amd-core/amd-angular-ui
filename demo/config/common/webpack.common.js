@@ -31,9 +31,12 @@ module.exports = {
   },
 
   resolve: {
-    modules: [Path.join(__dirname, '..', '..', "node_modules")],
-    mainFields: ["module", "browser", "main"],
-    extensions: ['.ts', '.js']
+    modules: [Path.join(__dirname, '..', '..', 'node_modules')],
+    mainFields: ['module', 'browser', 'main'],
+    extensions: ['.ts', '.js'],
+    alias: {
+      '@amd-core/angular-ui': Paths.LibRoot
+    }
   },
 
   module: {
