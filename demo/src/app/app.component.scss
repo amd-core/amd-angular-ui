@@ -1,0 +1,17 @@
+@import '../styles/helpers/color-scheme';
+
+.app {
+  .app-hero {
+    .app-hero-title {
+      h1 {
+        color: $japanese-violet;
+      }
+    }
+
+    .app-hero-image {
+      img {
+        width: 350px;
+      }
+    }
+  }
+}
