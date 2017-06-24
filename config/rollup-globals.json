@@ -28,5 +28,7 @@
   "rxjs/add/operator/switchMap": "Rx.Observable.prototype",
   "rxjs/add/operator/debounceTime": "Rx.Observable.prototype",
   "rxjs/Observable": "Rx",
-  "rxjs/Subscription": "Rx"
+  "rxjs/Subscription": "Rx",
+  "rxjs/BehaviorSubject": "Rx",
+  "bowser": "bowser"
 }

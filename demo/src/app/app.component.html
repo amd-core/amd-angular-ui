@@ -1,20 +1,22 @@
-<div class="app">
-  <div class="app-hero">
-    <div class="app-hero-title">
-      <h1>AMD Core Angular Seed</h1>
+<amd-app-container>
+  <div class="app">
+    <div class="app-hero">
+      <div class="app-hero-title">
+        <h1>AMD Core Angular Seed</h1>
+      </div>
+      <div class="app-hero-image" amdParallax [scale]="0.6">
+        <img src="../assets/images/amd-core-logo.png" alt="AMD Core Logo" />
+      </div>
     </div>
-    <div class="app-hero-image">
-      <img src="../assets/images/amd-core-logo.png" alt="AMD Core Logo" />
+
+    <div class="app-buttons">
+      <button amd-button class="button-primary" (click)="onPrimaryButtonClicked()">
+        Primary Button
+      </button>
+
+      <button amd-button class="button-secondary" (click)="onSecondaryButtonClicked()">
+        Secondary Button
+      </button>
     </div>
   </div>
-
-  <div class="app-buttons">
-    <button amd-button class="button-primary" (click)="onPrimaryButtonClicked()">
-      Primary Button
-    </button>
-
-    <button amd-button class="button-secondary" (click)="onSecondaryButtonClicked()">
-      Secondary Button
-    </button>
-  </div>
-</div>
+</amd-app-container>
