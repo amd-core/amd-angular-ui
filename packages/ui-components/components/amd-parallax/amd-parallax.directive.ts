@@ -34,7 +34,7 @@ export class AmdParallaxDirective implements OnInit {
     this.isParallaxEnabled =
       this.mediaQueryService.checkMediaQuery('gt-sm') &&
       !this.mediaQueryService.isIe() &&
-      !this.mediaQueryService.isEdge();
+      !this.mediaQueryService.isEdge(); // [TODO] - Fix scrolling on IE and Edge, http://brospars.github.io/snippets/ie-jumpy-bg 
     if (!this.isParallaxEnabled) { this.resetScrollPosition(); }
     else { this.setScrollPosition(this.getScrollTop()); }
   }
