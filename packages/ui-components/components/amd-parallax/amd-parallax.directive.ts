@@ -25,9 +25,12 @@ export class AmdParallaxDirective implements OnInit {
   public ngOnInit(): void {
     this.mediaQueryService.$mediaQuery.subscribe(this.checkDevice.bind(this));
     this.scrollService.$windowScroll.subscribe(this.onScroll.bind(this));
+
+    this.renderer.setStyle(this.elementRef.nativeElement, 'position', 'relative');
+    this.renderer.setStyle(this.elementRef.nativeElement, 'z-index', '-1');
   }
 
-  private checkDevice (): void {
+  private checkDevice(): void {
     this.isParallaxEnabled =
       this.mediaQueryService.checkMediaQuery('gt-sm') &&
       !this.mediaQueryService.isIe() &&
@@ -36,13 +39,13 @@ export class AmdParallaxDirective implements OnInit {
     else { this.setScrollPosition(this.getScrollTop()); }
   }
 
-  private onScroll (): void {
+  private onScroll(): void {
     if (!this.isParallaxEnabled) { return; }
     this.setScrollPosition(this.getScrollTop());
   }
 
   private setScrollPosition = (scrollPosition: number) => {
-    this.renderer.setStyle(this.elementRef.nativeElement, 'transform', `translateY(${scrollPosition * this.scale}px)`);
+    this.renderer.setStyle(this.elementRef.nativeElement, 'transform', `translate3d(0, ${scrollPosition * this.scale}px, 0)`);
   }
 
   private resetScrollPosition = () => {

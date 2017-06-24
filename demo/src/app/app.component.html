@@ -1,10 +1,15 @@
 <amd-app-container>
-  <div class="app">
+
+  <div amdParallax [scale]="0.6">
+    <img src="../assets/images/angular.jpg" alt="Angular Banner" class="amd-responsive-image" />
+  </div>
+
+  <div class="app amd-background">
     <div class="app-hero">
       <div class="app-hero-title">
         <h1>AMD Core Angular Seed</h1>
       </div>
-      <div class="app-hero-image" amdParallax [scale]="0.6">
+      <div class="app-hero-image">
         <img src="../assets/images/amd-core-logo.png" alt="AMD Core Logo" />
       </div>
     </div>
