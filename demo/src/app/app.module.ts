@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { AmdButtonModule } from '@amd-core/angular-ui';
+import { AmdButtonModule, AmdParallaxModule, AmdAppContainerModule } from '@amd-core/angular-ui';
 
 import { AppComponent } from './app.component';
 
@@ -9,7 +9,7 @@ import { AppComponent } from './app.component';
     BrowserModule.withServerTransition({
       appId: 'amd-angular-seed'
     }),
-    AmdButtonModule
+    AmdButtonModule, AmdParallaxModule, AmdAppContainerModule
   ],
   declarations: [AppComponent],
   bootstrap: [AppComponent]

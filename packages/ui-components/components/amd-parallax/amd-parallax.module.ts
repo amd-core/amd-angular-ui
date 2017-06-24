@@ -6,6 +6,6 @@ import { AmdParallaxDirective } from './amd-parallax.directive';
 @NgModule({
   imports: [AmdMediaQueryModule, AmdScrollModule],
   declarations: [AmdParallaxDirective],
-  exports: [AmdParallaxDirective]
+  exports: [AmdParallaxDirective, AmdScrollModule]
 })
 export class AmdParallaxModule { }
