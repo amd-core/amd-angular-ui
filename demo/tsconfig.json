@@ -11,10 +11,10 @@
 		"pretty": true,
 		"sourceMap": true,
 
-		"baseUrl": "./src",
-		"rootDir": "./src",
-		"sourceRoot": "./src",
-		"outDir": "./build",
+		"baseUrl": "./demo/src",
+		"rootDir": "../",
+		"sourceRoot": "./demo/src",
+		"outDir": "./demo/build",
 
 		"allowUnreachableCode": false,
 		"allowUnusedLabels": false,

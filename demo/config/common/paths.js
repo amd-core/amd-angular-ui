@@ -12,7 +12,7 @@ const AssetRoot = path.join(SourceRoot, 'assets');
 const FontRoot = path.join(AssetRoot, 'fonts');
 const ImageRoot = path.join(AssetRoot, 'images');
 
-const LibRoot = path.join(ProjectRoot, '..', 'dist', 'amd-angular-ui');
+const LibRoot = path.join(ProjectRoot, '..', 'packages', 'ui-components', 'components');
 
 module.exports = {
   ProjectRoot,
