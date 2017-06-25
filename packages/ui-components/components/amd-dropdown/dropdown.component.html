@@ -1,0 +1,9 @@
+<div class="amd-dropdown">
+  <div class="amd-dropdown__toggle" (click)="onToggleClicked()">
+    <ng-content select="[amdDropdownToggle]"></ng-content>
+  </div>
+
+  <div class="amd-dropdown__menu" *ngIf="isMenuActive">
+    <ng-content select="[amdDropdownMenu]"></ng-content>
+  </div>
+</div>

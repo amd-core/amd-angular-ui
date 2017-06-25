@@ -1,5 +1,6 @@
 export * from './amd-app-container/index';
 export * from './amd-dialog/index';
+export * from './amd-dropdown/index';
 export * from './amd-form/index';
 export * from './amd-hero/index';
 export * from './amd-sidenav/index';

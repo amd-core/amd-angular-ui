@@ -1,0 +1,21 @@
+@import 'colors';
+
+/**
+ * General Elements
+ */
+$element-padding: 10px !default;
+
+$enable-shadows: true !default;
+$box-shadow: 2px 2px 3px 0px $shadow-color;
+
+$enable-rounded: false !default;
+$border-radius: 3px !default;
+
+/**
+ * Dropdowns
+ */
+$min-dropdown-width: 300px !default;
+$dropdown-border-width: 1px !default;
+$dropdown-border-color: $primary-text-color !default;
+$dropdown-border-radius: $border-radius !default;
+$dropdown-box-shadow: $box-shadow !default;

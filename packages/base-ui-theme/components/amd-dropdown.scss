@@ -1,0 +1,15 @@
+@import '../styles/colors';
+@import '../styles/variables';
+@import '../styles/effects-mixins';
+
+.amd-dropdown {
+  &__menu {
+    background-color: $background-color;
+    min-width: $min-dropdown-width;
+    padding: $element-padding;
+    border: $dropdown-border-width solid $dropdown-border-color;
+
+    @include border-radius($dropdown-border-radius);
+    @include box-shadow($dropdown-box-shadow);
+  }
+}

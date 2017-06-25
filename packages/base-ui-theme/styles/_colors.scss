@@ -1,14 +1,26 @@
-
+/**
+ * Primary Colors
+ */
 $primary-color-dark: #00796B !default;
 $primary-color: #009688 !default;
 $primary-color-light: #B2DFDB !default;
 $primary-color-text: #FFFFFF !default;
 
+/**
+ * Secondary Colors
+ */
 $secondary-color: #448AFF !default;
 $secondary-color-text: $primary-color-text !default;
 
+/**
+ * Text Colors
+ */
 $primary-text-color: #212121 !default;
 $secondary-text-color: #757575 !default;
-$divider-color: #BDBDBD !default;
 
+/**
+ * Supporting Colors
+ */
+$divider-color: #BDBDBD !default;
 $background-color: #FFFFFF !default;
+$shadow-color: rgba(0, 0, 0, 0.5) !default;
