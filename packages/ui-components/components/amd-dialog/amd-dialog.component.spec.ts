@@ -11,7 +11,7 @@ describe('Component: amd-dialog', () => {
   let debugElement: DebugElement;
   let element: HTMLElement;
 
-  beforeEach(async(() => {
+  beforeEach((done: Function) => {
     TestBed.configureTestingModule({
       declarations: [AmdDialogComponent]
     }).compileComponents().then(() => {
@@ -20,8 +20,9 @@ describe('Component: amd-dialog', () => {
       debugElement = fixture.debugElement;
       element = debugElement.nativeElement;
       fixture.detectChanges();
+      done();
     });
-  }));
+  });
 
   describe('controller', () => {
     describe('constructor()', () => {
