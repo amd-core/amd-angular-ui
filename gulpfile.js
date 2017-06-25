@@ -96,6 +96,17 @@ gulp.task('sass:base', ['clean:pre'], () => {
 gulp.task('sass', ['sass:reset', 'sass:base']);
 
 /**
+ * Theme Tasks
+ */
+
+gulp.task('theme:base', ['clean:pre'], () => {
+  return gulp.src(path.resolve(packageDir, 'base-ui-theme', '**/*.scss'))
+    .pipe(gulp.dest(path.resolve(distDir, 'base-ui-theme')));
+});
+
+gulp.task('theme', ['theme:base']);
+
+/**
  * Copy Tasks
  */
 
@@ -210,7 +221,7 @@ gulp.task('clean:post', ['inline', 'metadata', 'bundle'], () => {
 });
 
 gulp.task('default', [
-  'clean:pre', 'copy', 'sass',
+  'clean:pre', 'copy', 'sass', 'theme',
   'ngc', 'inline', 'metadata',
   'bundle', 'clean:post'
 ]);
