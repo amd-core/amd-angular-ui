@@ -6,10 +6,19 @@
   &__menu {
     background-color: $background-color;
     min-width: $min-dropdown-width;
-    padding: $element-padding;
+    padding: $dropdown-menu-padding;
     border: $dropdown-border-width solid $dropdown-border-color;
 
     @include border-radius($dropdown-border-radius);
     @include box-shadow($dropdown-box-shadow);
+  }
+
+  &__menu-item {
+    padding: $dropdown-menu-item-padding;
+
+    &:hover {
+      cursor: pointer;
+      background-color: $highlight-text-color;
+    }
   }
 }

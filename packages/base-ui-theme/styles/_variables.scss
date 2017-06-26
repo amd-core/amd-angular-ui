@@ -4,6 +4,7 @@
  * General Elements
  */
 $element-padding: 10px !default;
+$element-padding-sm: $element-padding / 4 !default;
 
 $enable-shadows: true !default;
 $box-shadow: 2px 2px 3px 0px $shadow-color;
@@ -14,8 +15,10 @@ $border-radius: 3px !default;
 /**
  * Dropdowns
  */
-$min-dropdown-width: 300px !default;
+$min-dropdown-width: 150px !default;
+$dropdown-menu-padding: $element-padding $element-padding-sm !default; 
+$dropdown-menu-item-padding: $element-padding-sm $element-padding !default; 
 $dropdown-border-width: 1px !default;
-$dropdown-border-color: $primary-text-color !default;
+$dropdown-border-color: $highlight-text-color !default;
 $dropdown-border-radius: $border-radius !default;
 $dropdown-box-shadow: $box-shadow !default;
