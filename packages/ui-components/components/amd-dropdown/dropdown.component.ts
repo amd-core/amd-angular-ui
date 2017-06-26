@@ -10,4 +10,8 @@ export class AmdDropdownComponent {
   public onToggleClicked(): void {
     this.isMenuActive = !this.isMenuActive;
   }
+
+  public onOverlayClicked(): void {
+    this.isMenuActive = false;
+  }
 }

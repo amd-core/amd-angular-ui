@@ -1,0 +1,21 @@
+.amd-overlay {
+	opacity: 0;
+	visibility: hidden;
+	top: 0;
+	left: 0;
+	bottom: 0;
+	right: 0;
+
+  &--fixed {
+    position: fixed;
+  }
+
+  &--absolute {
+    position: absolute;
+  }
+
+  &--visible {
+    opacity: 0.6;
+    visibility: visible;
+  }
+}
