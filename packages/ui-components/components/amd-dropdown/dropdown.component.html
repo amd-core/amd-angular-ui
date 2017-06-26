@@ -5,7 +5,7 @@
 
   <amd-overlay [isActive]="isMenuActive" [isFixed]="true" (onOverlayClicked)="onOverlayClicked()"></amd-overlay>
 
-  <div class="amd-dropdown__menu" *ngIf="isMenuActive">
+  <div class="amd-dropdown__menu" *ngIf="isMenuActive" (click)="onMenuClicked()">
     <ng-content select="[amdDropdownMenu]"></ng-content>
   </div>
 </div>
