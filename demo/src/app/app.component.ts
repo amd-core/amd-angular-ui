@@ -6,6 +6,10 @@ import { Component, ChangeDetectionStrategy } from '@angular/core';
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class AppComponent {
+  public onDefaultButtonClicked(): void {
+    console.log('Default button clicked!');
+  }
+
   public onPrimaryButtonClicked(): void {
     console.log('Primary button clicked!');
   }

@@ -3,11 +3,14 @@
 @import '../styles/effects-mixins';
 
 .amd-dropdown {
+  display: inline-block;
+
   &__menu {
     background-color: $background-color;
     min-width: $min-dropdown-width;
     padding: $dropdown-menu-padding;
     border: $dropdown-border-width solid $dropdown-border-color;
+    z-index: 2;
 
     @include border-radius($dropdown-border-radius);
     @include box-shadow($dropdown-box-shadow);

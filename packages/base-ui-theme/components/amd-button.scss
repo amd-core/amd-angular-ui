@@ -14,12 +14,16 @@
     }
 }
 
-button {
-  &.button-primary {
+.amd-button {
+  &--default {
+    @include colored-button($highlight-text-color, $primary-text-color)
+  }
+
+  &--primary {
     @include colored-button($primary-color, $primary-color-text);
   }
 
-  &.button-secondary {
+  &--secondary {
     @include colored-button($secondary-color, $secondary-color-text);
   }
 }
