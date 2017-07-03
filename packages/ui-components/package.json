@@ -1,6 +1,6 @@
 {
   "name": "@amd-core/angular-ui",
-  "version": "0.0.17",
+  "version": "0.0.18",
   "description": "An Angular UI component framework by AMD Core",
   "main": "./bundles/angular-ui.umd.js",
   "module": "./bundles/angular-ui.es5.js",
