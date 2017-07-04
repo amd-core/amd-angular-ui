@@ -1,13 +1,39 @@
 $i: 25;
 
+@mixin element-sizer($attribute, $value) {
+  [#{$attribute}="#{$i}"] {
+    #{$attribute}: #{$i}px;
+  }
+
+  [#{$attribute}-y="#{$i}"] {
+    #{$attribute}-top: #{$i}px;
+    #{$attribute}-bottom: #{$i}px;
+  }
+
+  [#{$attribute}-top="#{$i}"] {
+    #{$attribute}-top: #{$i}px;
+  }
+
+  [#{$attribute}-bottom="#{$i}"] {
+    #{$attribute}-bottom: #{$i}px;
+  }
+
+  [#{$attribute}-x="#{$i}"] {
+    #{$attribute}-left: #{$i}px;
+    #{$attribute}-right: #{$i}px;
+  }
+
+  [#{$attribute}-left="#{$i}"] {
+    #{$attribute}-left: #{$i}px;
+  }
+
+  [#{$attribute}-right="#{$i}"] {
+    #{$attribute}-right: #{$i}px;
+  }
+}
+
 @while $i <= 100 {
-  [padding="#{$i}"] {
-    padding: #{$i}px;
-  }
-
-  [margin="#{$i}"] {
-    margin: #{$i}px;
-  }
-
-  $i: $i + 25;
+  @include element-sizer(padding, $i);
+  @include element-sizer(margin, $i);
+  $i: $i + 5;
 }
