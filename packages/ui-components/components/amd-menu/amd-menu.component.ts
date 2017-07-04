@@ -4,4 +4,9 @@ import { Component } from '@angular/core';
   selector: 'amd-menu',
   templateUrl: './amd-menu.component.html'
 })
-export class AmdMenuComponent { }
+export class AmdMenuComponent { 
+
+  public onToggleClicked(): void {
+    alert('boolox');
+  }
+}

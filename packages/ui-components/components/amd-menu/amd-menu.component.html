@@ -1,3 +1,5 @@
-<div class="amd-nav">
-    <ng-content></ng-content>
+<div class="amd-menu">
+  <div class="amd-dropdown__toggle" (click)="onToggleClicked()">
+    <ng-content select="[amdMenuItem]"></ng-content>
+  </div>
 </div>   
