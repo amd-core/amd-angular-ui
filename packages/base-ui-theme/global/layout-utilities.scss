@@ -1,4 +1,4 @@
-$i: 25;
+$i: 5;
 
 @mixin element-sizer($attribute, $value) {
   [#{$attribute}="#{$i}"] {
