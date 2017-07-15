@@ -1,3 +1,4 @@
+@import '../styles/variables';
 @import '../styles/colors';
 @import '../styles/effects-mixins';
 
@@ -16,8 +17,8 @@
 }
 
 .amd-button {
-  @include border-radius($dropdown-border-radius);
-  @include box-shadow($dropdown-box-shadow);
+  @include border-radius($button-border-radius);
+  @include box-shadow($button-box-shadow);
 
   &--default {
     @include colored-button($default-color, $default-color-text);

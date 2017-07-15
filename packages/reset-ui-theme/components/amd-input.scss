@@ -1,0 +1,6 @@
+@import '../styles/reset-mixins';
+
+.amd-input {
+  @include appearance(none);
+  outline: none;
+}

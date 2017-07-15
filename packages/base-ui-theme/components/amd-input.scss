@@ -1,0 +1,13 @@
+@import '../styles/variables';
+@import '../styles/colors';
+@import '../styles/effects-mixins';
+
+.amd-input {
+  @include border-radius($input-border-radius);
+  border: $input-border-width solid $input-border-color;
+  padding: $input-padding;
+
+  &:focus {
+    border-color: $input-border-active-color;
+  }
+}

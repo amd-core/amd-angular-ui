@@ -1,12 +1,10 @@
 import { NgModule } from '@angular/core';
-import { BrowserModule } from '@angular/platform-browser';
-import { FormsModule } from '@angular/forms';
 
-import { AmdInputComponent } from './amd-input.component';
+import { AmdInputContainerComponent } from './amd-input-container.component';
+import { AmdInputDirective } from './amd-input.directive';
 
 @NgModule({
-	imports: [BrowserModule, FormsModule],
-	declarations: [AmdInputComponent],
-	exports: [AmdInputComponent]
+  declarations: [AmdInputDirective, AmdInputContainerComponent],
+  exports: [AmdInputDirective, AmdInputContainerComponent]
 })
 export class AmdInputModule { }

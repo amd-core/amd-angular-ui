@@ -11,14 +11,34 @@ $box-shadow: 2px 2px 3px 0px $shadow-color;
 
 $enable-rounded: false !default;
 $border-radius: 3px !default;
+$border-width: 1px !default;
+$border-color: rgba(0,0,0,.15) !default;
 
 /**
  * Dropdowns
  */
 $min-dropdown-width: 150px !default;
-$dropdown-menu-padding: $element-padding $element-padding-sm !default; 
+
+$dropdown-menu-padding: $element-padding 0 !default; 
 $dropdown-menu-item-padding: $element-padding-sm $element-padding !default; 
-$dropdown-border-width: 1px !default;
-$dropdown-border-color: $highlight-text-color !default;
+
 $dropdown-border-radius: $border-radius !default;
+$dropdown-border-width: $border-width !default;
+$dropdown-border-color: $border-color !default;
+
 $dropdown-box-shadow: $box-shadow !default;
+
+/**
+ * Buttons
+ */
+ $button-border-radius: $border-radius !default;
+ $button-box-shadow: $box-shadow !default;
+
+ /**
+  * Inputs
+  */
+$input-border-radius: $border-radius !default;
+$input-border-width: $border-width !default;
+$input-border-color: $border-color !default;
+$input-border-active-color: $primary-color !default;
+$input-padding: 5px 7.5px !default;

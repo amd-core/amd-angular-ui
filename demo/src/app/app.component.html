@@ -1,50 +1,58 @@
 <amd-app-container>
 
-  <h1>AMD Core Angular UI</h1>
+  <h1 class="text-center" margin-top="30">AMD Core Angular UI</h1>
 
-  <div class="app amd-background">
-    <div class="app-buttons">
-      <h2>Buttons</h2>
+  <div margin="25">
+    <h2>Buttons</h2>
 
-      <amd-dropdown>
-        <button amdDropdownToggle amdButton type="primary">
-          Toogle Dropdown
-        </button>
+    <amd-dropdown>
+      <button amdDropdownToggle amdButton type="primary">
+        Toogle Dropdown
+      </button>
 
-        <div amdDropdownMenu>
-          <div amdDropdownMenuItem>
-            Menu Item 1
-          </div>
-
-          <div amdDropdownMenuItem>
-            Menu Item 2
-          </div>
-
-          <div amdDropdownMenuItem>
-            Menu Item 3
-          </div>
-
-          <div amdDropdownMenuItem>
-            Menu Item 4
-          </div>
+      <div amdDropdownMenu>
+        <div amdDropdownMenuItem>
+          Menu Item 1
         </div>
-      </amd-dropdown>
 
-      <button amdButton (click)="onDefaultButtonClicked()">
-        Default Button
-      </button>
+        <div amdDropdownMenuItem>
+          Menu Item 2
+        </div>
 
-      <button amdButton type="primary" (click)="onPrimaryButtonClicked()">
-        Primary Button
-      </button>
+        <div amdDropdownMenuItem>
+          Menu Item 3
+        </div>
 
-      <button amdButton type="secondary" (click)="onSecondaryButtonClicked()">
-        Secondary Button
-      </button>
-    </div>
+        <div amdDropdownMenuItem>
+          Menu Item 4
+        </div>
+      </div>
+    </amd-dropdown>
+
+    <button amdButton (click)="onDefaultButtonClicked()">
+      Default Button
+    </button>
+
+    <button amdButton type="primary" (click)="onPrimaryButtonClicked()">
+      Primary Button
+    </button>
+
+    <button amdButton type="secondary" (click)="onSecondaryButtonClicked()">
+      Secondary Button
+    </button>
   </div>
 
-  <h2>Hero</h2>
+  <div margin="25">
+    <h2>Inputs</h2>
+    
+    <amd-input-container>
+      <input type="text" amdInput placeholder="Enter some text">
+    </amd-input-container>
+  </div>
+
+  <div margin-left="25" margin-top="25">
+    <h2>Hero</h2>
+  </div>
 
   <amd-hero>
     <div amdHeroBackground amdParallax [scale]="0.6">
