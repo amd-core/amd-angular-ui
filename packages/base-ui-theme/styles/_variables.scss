@@ -15,6 +15,11 @@ $border-width: 1px !default;
 $border-color: rgba(0,0,0,.15) !default;
 
 /**
+ * Typography
+ */
+$base-font-size: 16px !default;
+
+/**
  * Dropdowns
  */
 $min-dropdown-width: 150px !default;
@@ -42,3 +47,5 @@ $input-border-width: $border-width !default;
 $input-border-color: $border-color !default;
 $input-border-active-color: $primary-color !default;
 $input-padding: 5px 7.5px !default;
+$input-color: $secondary-text-color !default;
+$input-font-size: $base-font-size !default;
