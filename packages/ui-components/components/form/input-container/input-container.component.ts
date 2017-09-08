@@ -13,7 +13,6 @@ import { AmdInputDirective } from '../input/input.directive';
 })
 export class AmdInputContainerComponent implements AfterContentInit {
   public set isFocussed(isFocussed: boolean) {
-    console.log('Focus');
     this._isFocussed = isFocussed;
     this.changeDetectorRef.markForCheck();
   }

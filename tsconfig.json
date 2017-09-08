@@ -22,7 +22,7 @@
     ],
     "paths": {
       "@amd-core/angular-ui": [
-        "./dist/amd-angular-ui"
+        "./packages/ui-components/components"
       ]
     }
   },

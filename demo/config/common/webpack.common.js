@@ -9,9 +9,7 @@ const Paths = require('./paths');
 
 module.exports = {
   entry: {
-    polyfills: './src/polyfills.ts',
-    vendor: './src/vendor.ts',
-    main: './src/main.ts'
+    main: './demo/src/main.ts'
   },
 
   output: {
@@ -31,7 +29,6 @@ module.exports = {
   },
 
   resolve: {
-    modules: [Path.join(__dirname, '..', '..', 'node_modules')],
     mainFields: ['module', 'browser', 'main'],
     extensions: ['.ts', '.js'],
     alias: {
@@ -83,12 +80,9 @@ module.exports = {
       /angular(\\|\/)core(\\|\/)@angular/,
       Paths.SourceRoot, {}
     ),
-    new Webpack.optimize.CommonsChunkPlugin({
-      name: ['main', 'vendor', 'polyfills']
-    }),
     new ExtractTextPlugin('css/[name].[hash].css'),
     new HtmlWebpackPlugin({
-      template: './src/index.html'
+      template: './demo/src/index.html'
     }),
     new Webpack.DefinePlugin({
       ENV: JSON.stringify(EnvConfig.env),

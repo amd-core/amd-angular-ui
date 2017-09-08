@@ -1,7 +1,8 @@
-node_modules
-.vscode
+/node_modules/
+/.vscode/
 npm-debug*
-coverage
-dist
+/coverage/
+/dist/
+/demo/build/
 *log
 *err

@@ -1,5 +1,5 @@
 {
-  "extends": "./tsconfig.json",
+  "extends": "./tsconfig.base.json",
 	"files": [
     "src/server/app.server.ts",
     "src/server/server.aot.ts"

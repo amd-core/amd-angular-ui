@@ -3,7 +3,12 @@ module.exports = {
     rules: [{
       test: /\.ts$/,
       use: [
-        'ts-loader',
+        {
+          loader: 'ts-loader',
+          options: {
+            configFile: 'demo/tsconfig.base.json'
+          }
+        },
         'angular2-template-loader'
       ]
     }]

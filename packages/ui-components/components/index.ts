@@ -16,6 +16,7 @@ export * from './form/input/input.directive';
 export * from './form/input/input.module';
 
 export * from './form/input-container/input-container.component';
+export * from './form/input-container/input-container.module';
 
 export * from './form/option/option.component';
 export * from './form/option/option.module';
