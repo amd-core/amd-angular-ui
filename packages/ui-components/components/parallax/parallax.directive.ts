@@ -4,8 +4,8 @@ import {
 } from '@angular/core';
 import { DOCUMENT } from '@angular/platform-browser';
 
-import { AmdMediaQueryService } from '../utilities/amd-media-query/amd-media-query.service';
-import { AmdScrollService } from '../utilities/amd-scroll/amd-scroll.service';
+import { AmdMediaQueryService } from '../utilities/media-query/media-query.service';
+import { AmdScrollService } from '../utilities/scroll/scroll.service';
 
 @Directive({
   selector: '[amdParallax]'

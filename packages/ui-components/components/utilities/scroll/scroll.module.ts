@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 
-import { AmdScrollService } from './amd-scroll.service';
+import { AmdScrollService } from './scroll.service';
 
 @NgModule({
   providers: [AmdScrollService]

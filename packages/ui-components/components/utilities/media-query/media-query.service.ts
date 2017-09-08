@@ -5,8 +5,8 @@ import { isPlatformServer } from '@angular/common';
 import { BehaviorSubject } from 'rxjs/BehaviorSubject';
 import * as bowser from 'bowser';
 
-import { AmdWindowRef } from '../amd-window-ref/amd-window-ref.service';
-import { AMD_MEDIA_QUERY, IAmdMediaQuery } from './amd-media-query.constant';
+import { AmdWindowRef } from '../window-ref/window-ref.service';
+import { AMD_MEDIA_QUERY, IAmdMediaQuery } from './media-query.constant';
 
 @Injectable()
 export class AmdMediaQueryService {

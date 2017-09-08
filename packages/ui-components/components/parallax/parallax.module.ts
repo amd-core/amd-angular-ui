@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 
-import { AmdMediaQueryModule } from '../utilities/amd-media-query/amd-media-query.module';
-import { AmdScrollModule } from '../utilities/amd-scroll/amd-scroll.module';
+import { AmdMediaQueryModule } from '../utilities/media-query/media-query.module';
+import { AmdScrollModule } from '../utilities/scroll/scroll.module';
 
 import { AmdParallaxDirective } from './parallax.directive';
 

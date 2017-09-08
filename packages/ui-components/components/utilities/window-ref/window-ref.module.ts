@@ -1,5 +1,5 @@
 import { NgModule } from '@angular/core';
-import { AmdWindowRef } from './amd-window-ref.service';
+import { AmdWindowRef } from './window-ref.service';
 
 @NgModule({
   providers: [AmdWindowRef]

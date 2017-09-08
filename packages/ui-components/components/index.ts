@@ -36,12 +36,12 @@ export * from './sidenav/sidenav.component';
 export * from './sidenav/sidenav.module';
 export * from './sidenav/sidenav.service';
 
-export * from './utilities/amd-media-query/amd-media-query.constant';
-export * from './utilities/amd-media-query/amd-media-query.module';
-export * from './utilities/amd-media-query/amd-media-query.service';
+export * from './utilities/media-query/media-query.constant';
+export * from './utilities/media-query/media-query.module';
+export * from './utilities/media-query/media-query.service';
 
-export * from './utilities/amd-scroll/amd-scroll.module';
-export * from './utilities/amd-scroll/amd-scroll.service';
+export * from './utilities/scroll/scroll.module';
+export * from './utilities/scroll/scroll.service';
 
-export * from './utilities/amd-window-ref/amd-window-ref.module';
-export * from './utilities/amd-window-ref/amd-window-ref.service';
+export * from './utilities/window-ref/window-ref.module';
+export * from './utilities/window-ref/window-ref.service';
