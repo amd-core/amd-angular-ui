@@ -1,7 +1,3 @@
-export * from './amd-sidenav/amd-sidenav.component';
-export * from './amd-sidenav/amd-sidenav.module';
-export * from './amd-sidenav/amd-sidenav.service';
-
 export * from './app-container/app-container.component';
 export * from './app-container/app-container.module';
 
@@ -35,6 +31,10 @@ export * from './overlay/overlay.module';
 
 export * from './parallax/parallax.directive';
 export * from './parallax/parallax.module';
+
+export * from './sidenav/sidenav.component';
+export * from './sidenav/sidenav.module';
+export * from './sidenav/sidenav.service';
 
 export * from './utilities/amd-media-query/amd-media-query.constant';
 export * from './utilities/amd-media-query/amd-media-query.module';

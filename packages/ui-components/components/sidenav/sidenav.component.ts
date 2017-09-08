@@ -1,9 +1,10 @@
 import { Component, Input } from '@angular/core';
-import { AmdSidenavService } from './amd-sidenav.service';
+
+import { AmdSidenavService } from './sidenav.service';
 
 @Component({
 	selector: 'amd-sidenav',
-	templateUrl: './amd-sidenav.component.html'
+	templateUrl: './sidenav.component.html'
 })
 export class AmdSidenavComponent {
 	@Input() public sidenavId: string;

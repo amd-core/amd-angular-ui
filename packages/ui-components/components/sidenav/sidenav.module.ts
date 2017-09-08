@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 
-import { AmdSidenavService } from './amd-sidenav.service';
-import { AmdSidenavComponent } from './amd-sidenav.component';
+import { AmdSidenavService } from './sidenav.service';
+import { AmdSidenavComponent } from './sidenav.component';
 
 @NgModule({
 	exports: [AmdSidenavComponent],
