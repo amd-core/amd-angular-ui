@@ -4,11 +4,11 @@ import {
   ChangeDetectorRef
 } from '@angular/core';
 
-import { AmdInputDirective } from './amd-input.directive';
+import { AmdInputDirective } from './input.directive';
 
 @Component({
   selector: 'amd-input-container',
-  templateUrl: './amd-input-container.component.html',
+  templateUrl: './input-container.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class AmdInputContainerComponent implements AfterContentInit {

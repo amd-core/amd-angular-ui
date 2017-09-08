@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 
-import { AmdButtonModule } from './amd-button/amd-button.module';
-import { AmdInputModule } from './amd-input/amd-input.module';
+import { AmdButtonModule } from './button/button.module';
+import { AmdInputModule } from './input/input.module';
 
 @NgModule({
 	imports: [AmdButtonModule, AmdInputModule],

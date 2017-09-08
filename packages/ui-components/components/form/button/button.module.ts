@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 
-import { AmdButtonDirective } from './amd-button.directive';
+import { AmdButtonDirective } from './button.directive';
 
 @NgModule({
   declarations: [AmdButtonDirective],

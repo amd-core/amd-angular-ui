@@ -1,10 +1,3 @@
-export * from './amd-form/amd-form.module';
-export * from './amd-form/amd-button/amd-button.directive';
-export * from './amd-form/amd-button/amd-button.module';
-export * from './amd-form/amd-input/amd-input-container.component';
-export * from './amd-form/amd-input/amd-input.directive';
-export * from './amd-form/amd-input/amd-input.module';
-
 export * from './amd-hero/amd-hero.component';
 export * from './amd-hero/amd-hero.module';
 
@@ -26,6 +19,13 @@ export * from './dialog/dialog.module';
 
 export * from './dropdown/dropdown.component';
 export * from './dropdown/dropdown.module';
+
+export * from './form/form.module';
+export * from './form/button/button.directive';
+export * from './form/button/button.module';
+export * from './form/input/input-container.component';
+export * from './form/input/input.directive';
+export * from './form/input/input.module';
 
 export * from './option/option.component';
 export * from './option/option.module';
