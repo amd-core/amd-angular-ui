@@ -5,7 +5,7 @@ import { Directive, Input, Renderer2, ElementRef, OnInit } from '@angular/core';
 })
 export class AmdButtonDirective implements OnInit {
   @Input()
-  public set type(theme: string) {
+  public set color(theme: string) {
     this.renderer.addClass(this.elementRef.nativeElement, `amd-button--${theme}`);
   }
 

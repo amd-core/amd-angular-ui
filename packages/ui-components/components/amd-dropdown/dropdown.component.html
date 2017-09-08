@@ -1,9 +1,0 @@
-<span class="amd-dropdown__toggle" (click)="onToggleClicked()">
-  <ng-content select="[amdDropdownToggle]"></ng-content>
-</span>
-
-<amd-overlay [isActive]="isMenuActive" [isFixed]="true" (onOverlayClicked)="onOverlayClicked()"></amd-overlay>
-
-<div class="amd-dropdown__menu" *ngIf="isMenuActive" (click)="onMenuClicked()">
-  <ng-content select="[amdDropdownMenu]"></ng-content>
-</div>

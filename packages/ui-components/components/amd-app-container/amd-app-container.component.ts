@@ -1,7 +1,7 @@
 import { Component, Renderer2, Inject } from '@angular/core';
 import { DOCUMENT } from '@angular/platform-browser';
 
-import { AmdScrollService } from '../utilities/amd-scroll';
+import { AmdScrollService } from '../utilities/amd-scroll/amd-scroll.service';
 
 @Component({
   selector: 'amd-app-container',

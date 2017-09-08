@@ -1,0 +1,13 @@
+@import '../styles/colors';
+@import '../styles/variables';
+
+.amd-menu {
+  &__item {
+    padding: $dropdown-menu-item-padding;
+
+    &:hover {
+      cursor: pointer;
+      background-color: $highlight-text-color;
+    }
+  }
+}

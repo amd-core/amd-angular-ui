@@ -12,23 +12,39 @@ import { AmdInputDirective } from './amd-input.directive';
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class AmdInputContainerComponent implements AfterContentInit {
-  public isFocussed: boolean = false;
+  public set isFocussed(isFocussed: boolean) {
+    console.log('Focus');
+    this._isFocussed = isFocussed;
+    this.changeDetectorRef.markForCheck();
+  }
 
-  @ContentChild(AmdInputDirective)
-  private input: AmdInputDirective;
+  public get isFocussed(): boolean {
+    return this._isFocussed;
+  }
+
+  private _isFocussed: boolean = false; 
+
+  @ContentChild(AmdInputDirective) private input: AmdInputDirective;
 
   constructor(
     private changeDetectorRef: ChangeDetectorRef
   ) { }
+
+  public focus(): void {
+    this.isFocussed = true;
+    this.input.setFocus(true);
+  }
+
+  public blur(): void {
+    this.isFocussed = false;
+    this.input.setFocus(false);
+  }
 
   public ngAfterContentInit(): void {
     if (!this.input) {
       throw new Error('amdInput is required as a child of amdInputContainer');
     }
 
-    this.input.isFocussedChange.subscribe((isFocussed: boolean) => {
-      this.isFocussed = isFocussed;
-      this.changeDetectorRef.markForCheck();
-    });
+    this.input.isFocussedChange.subscribe((isFocussed: boolean) => this.isFocussed = isFocussed);
   }
 }

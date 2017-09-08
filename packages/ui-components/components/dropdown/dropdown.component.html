@@ -1,0 +1,14 @@
+<amd-overlay
+  [isActive]="isContentActive" [isFixed]="true"
+  (onOverlayClicked)="onOverlayClicked()">
+</amd-overlay>
+
+<div class="amd-dropdown">
+  <div class="amd-dropdown__trigger" (click)="onTriggerClicked()">
+    <ng-content select="[amdDropdownTrigger]"></ng-content>
+  </div>
+
+  <div class="amd-dropdown__content" *ngIf="isContentActive">
+    <ng-content select="[amdDropdownContent]"></ng-content>
+  </div>
+</div>

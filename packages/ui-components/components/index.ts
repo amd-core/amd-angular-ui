@@ -1,11 +1,44 @@
-export * from './amd-app-container/index';
-export * from './amd-dialog/index';
-export * from './amd-dropdown/index';
-export * from './amd-form/index';
-export * from './amd-hero/index';
-export * from './amd-overlay/index';
-export * from './amd-sidenav/index';
-export * from './amd-parallax/index';
-export * from './utilities/amd-media-query/index';
-export * from './utilities/amd-scroll/index';
-export * from './utilities/amd-window-ref/index';
+export * from './amd-app-container/amd-app-container.component';
+export * from './amd-app-container/amd-app-container.module';
+
+export * from './amd-dialog/amd-dialog.component';
+export * from './amd-dialog/amd-dialog.module';
+
+export * from './dropdown/dropdown.component';
+export * from './dropdown/dropdown.module';
+
+export * from './amd-form/amd-form.module';
+export * from './amd-form/amd-button/amd-button.directive';
+export * from './amd-form/amd-button/amd-button.module';
+export * from './amd-form/amd-input/amd-input-container.component';
+export * from './amd-form/amd-input/amd-input.directive';
+export * from './amd-form/amd-input/amd-input.module';
+
+export * from './amd-hero/amd-hero.component';
+export * from './amd-hero/amd-hero.module';
+
+export * from './amd-overlay/overlay.component';
+export * from './amd-overlay/overlay.module';
+
+export * from './amd-parallax/amd-parallax.directive';
+export * from './amd-parallax/amd-parallax.module';
+
+export * from './amd-sidenav/amd-sidenav.component';
+export * from './amd-sidenav/amd-sidenav.module';
+export * from './amd-sidenav/amd-sidenav.service';
+
+export * from './option/option.component';
+export * from './option/option.module';
+
+export * from './select/select.component';
+export * from './select/select.module';
+
+export * from './utilities/amd-media-query/amd-media-query.constant';
+export * from './utilities/amd-media-query/amd-media-query.module';
+export * from './utilities/amd-media-query/amd-media-query.service';
+
+export * from './utilities/amd-scroll/amd-scroll.module';
+export * from './utilities/amd-scroll/amd-scroll.service';
+
+export * from './utilities/amd-window-ref/amd-window-ref.module';
+export * from './utilities/amd-window-ref/amd-window-ref.service';

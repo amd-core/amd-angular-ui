@@ -6,11 +6,11 @@
     <h2>Buttons</h2>
 
     <amd-dropdown>
-      <button amdDropdownToggle amdButton type="primary">
+      <button amdDropdownTrigger amdButton color="primary">
         Toogle Dropdown
       </button>
 
-      <div amdDropdownMenu>
+      <div amdDropdownContent>
         <div amdDropdownMenuItem>
           Menu Item 1
         </div>
@@ -33,11 +33,11 @@
       Default Button
     </button>
 
-    <button amdButton type="primary" (click)="onPrimaryButtonClicked()">
+    <button amdButton color="primary" (click)="onPrimaryButtonClicked()">
       Primary Button
     </button>
 
-    <button amdButton type="secondary" (click)="onSecondaryButtonClicked()">
+    <button amdButton color="secondary" (click)="onSecondaryButtonClicked()">
       Secondary Button
     </button>
   </div>
@@ -45,22 +45,18 @@
   <div margin="25">
     <h2>Inputs</h2>
     
-    <amd-input-container>
-      <input type="text" amdInput placeholder="Enter some text">
-    </amd-input-container>
-  </div>
-
-  <div margin-left="25" margin-top="25">
-    <h2>Hero</h2>
-  </div>
-
-  <amd-hero>
-    <div amdHeroBackground amdParallax [scale]="0.6">
-      <img src="../assets/images/angular.jpg" alt="Angular Banner" class="amd-responsive-img" />
+    <div style="display: flex">
+      <amd-input-container>
+        <input type="text" amdInput placeholder="Standard text input...">
+      </amd-input-container>
     </div>
 
-    <div amdHeroContent>
-      Hello World
+    <div>
+      <amd-select placeholder="Select..">
+        <amd-option>Option 1</amd-option>
+        <amd-option>Option 2</amd-option>
+      </amd-select>
     </div>
-  </amd-hero>
+  </div>
+
 </amd-app-container>

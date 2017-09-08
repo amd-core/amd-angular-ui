@@ -1,6 +1,7 @@
 import {
   Directive, HostListener,
-  HostBinding, Output, EventEmitter
+  HostBinding, Output,
+  EventEmitter, Input
 } from '@angular/core';
 
 @Directive({
@@ -16,25 +17,31 @@ export class AmdInputDirective {
   @HostBinding('class.amd-input--focussed')
   public inputFocussedClass: boolean = false;
 
-  private _isFocussed: boolean = false;
-  
-  public get isFocussed(): boolean {
-    return this._isFocussed;
+  @Input()
+  public set isFocussed(isFocussed: boolean) {
+    this.setFocus(isFocussed);
   }
 
+  private _isFocussed: boolean = false;
+
+  // constructor(
+  //   private changeDetectorRef: ChangeDetectorRef
+  // ) { }
+
   @HostListener('focus')
-  public onfocus(): void {
+  public onFocus(): void {
     this.setFocus(true);
   }
 
   @HostListener('blur')
-  public onblur(): void {
+  public onBlur(): void {
     this.setFocus(false);
   }
 
-  private setFocus(focus: boolean): void {
+  public setFocus(focus: boolean): void {
     this._isFocussed = focus;
     this.inputFocussedClass = focus;
     this.isFocussedChange.emit(focus);
+    // this.changeDetectorRef.markForCheck();
   }
 }

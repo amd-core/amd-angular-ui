@@ -8,8 +8,9 @@
   padding: $input-padding;
   color: $input-color;
   font-size: $input-font-size;
+  min-width: $input-min-width;
 
-  &:focus {
+  &--focussed {
     border-color: $input-border-active-color;
   }
 }

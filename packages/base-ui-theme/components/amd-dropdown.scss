@@ -5,7 +5,7 @@
 .amd-dropdown {
   display: inline-block;
 
-  &__menu {
+  &__content {
     background-color: $background-color;
     min-width: $min-dropdown-width;
     padding: $dropdown-menu-padding;
@@ -14,14 +14,5 @@
 
     @include border-radius($dropdown-border-radius);
     @include box-shadow($dropdown-box-shadow);
-  }
-
-  &__menu-item {
-    padding: $dropdown-menu-item-padding;
-
-    &:hover {
-      cursor: pointer;
-      background-color: $highlight-text-color;
-    }
   }
 }

@@ -1,6 +1,9 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { AmdButtonModule, AmdParallaxModule, AmdAppContainerModule, AmdHeroModule, AmdDropdownModule, AmdInputModule } from '@amd-core/angular-ui';
+import {
+  AmdButtonModule, AmdParallaxModule, AmdAppContainerModule,
+  AmdHeroModule, AmdDropdownModule, AmdInputModule, AmdSelectModule
+} from '@amd-core/angular-ui';
 
 import { AppComponent } from './app.component';
 
@@ -9,7 +12,10 @@ import { AppComponent } from './app.component';
     BrowserModule.withServerTransition({
       appId: 'amd-angular-seed'
     }),
-    AmdButtonModule, AmdParallaxModule, AmdAppContainerModule, AmdHeroModule, AmdDropdownModule, AmdInputModule
+    AmdButtonModule, AmdParallaxModule,
+    AmdAppContainerModule, AmdHeroModule,
+    AmdDropdownModule, AmdInputModule,
+    AmdSelectModule
   ],
   declarations: [AppComponent],
   bootstrap: [AppComponent]

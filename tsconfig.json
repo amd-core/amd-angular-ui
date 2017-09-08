@@ -27,7 +27,7 @@
     }
   },
   "include": [
-    "demo/**/*.ts"
+    "**/*.ts"
   ],
   "exclude": [
     ".vscode",
