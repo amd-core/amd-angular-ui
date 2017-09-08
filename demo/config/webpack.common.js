@@ -2,10 +2,17 @@ const Webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
-const Path = require('path');
+const path = require('path');
 
-const EnvConfig = require('./webpack.env');
-const Paths = require('./paths');
+const EnvConfig = require('./env');
+
+const sassLoader = {
+  loader: 'sass-loader',
+  options: {
+    includePaths: ['./src/styles'],
+    outputStyle: 'compressed'
+  }
+};
 
 module.exports = {
   entry: {
@@ -13,13 +20,13 @@ module.exports = {
   },
 
   output: {
-    path: Paths.AppBuildRoot,
+    path: path.resolve(__dirname, '..', 'build'),
     filename: 'js/[name].[hash].js',
     chunkFilename: 'js/[id].[hash].chunk.js'
   },
 
   devServer: {
-    contentBase: Paths.AppBuildRoot,
+    contentBase: './build',
     inline: true,
     historyApiFallback: true,
     overlay: {
@@ -29,10 +36,11 @@ module.exports = {
   },
 
   resolve: {
+    modules: ['./node_modules'],
     mainFields: ['module', 'browser', 'main'],
     extensions: ['.ts', '.js'],
     alias: {
-      '@amd-core/angular-ui': Paths.LibRoot
+      '@amd-core/angular-ui': path.resolve(__dirname, '..', '..', 'packages', 'ui-components', 'components')
     }
   },
 
@@ -41,17 +49,19 @@ module.exports = {
       test: /\.html$/,
       use: 'html-loader'
     }, {
-      test: /\.(png|jpe?g|gif|svg|ico)$/,
-      include: Paths.ImageRoot,
-      use: [{
-        loader: 'file-loader',
-        query: {
-          name: 'images/[name].[hash].[ext]'
+      test: /\.(gif|png|jpe?g|svg|ico)$/i,
+      loaders: [
+        {
+          loader: 'file-loader',
+          query: {
+            name: 'images/[name].[hash].[ext]',
+            hash: 'sha512',
+            digest: 'hex'
+          }
         }
-      }]
+      ]
     }, {
-      test: /\.(svg|woff|woff2|ttf|eot)$/,
-      include: Paths.FontRoot,
+      test: /\.(woff|woff2|ttf|eot)$/,
       use: [{
         loader: 'file-loader',
         query: {
@@ -61,35 +71,34 @@ module.exports = {
     },
     {
       test: /\.scss$/,
-      include: Paths.AppRoot,
-      use: ['raw-loader', 'postcss-loader', 'sass-loader'],
+      include: path.resolve(__dirname, '..', 'src', 'app'),
+      use: ['raw-loader', 'postcss-loader', sassLoader],
     },
     {
       test: /\.scss$/,
-      exclude: Paths.AppRoot,
+      exclude: path.resolve(__dirname, '..', 'src', 'app'),
       use: ExtractTextPlugin.extract({
         fallback: 'style-loader',
-        use: ['css-loader', 'postcss-loader', 'sass-loader']
+        use: ['css-loader', 'postcss-loader', sassLoader]
       })
-    }
-    ]
+    }]
   },
 
   plugins: [
     new Webpack.ContextReplacementPlugin(
       /angular(\\|\/)core(\\|\/)@angular/,
-      Paths.SourceRoot, {}
+      './src', {}
     ),
     new ExtractTextPlugin('css/[name].[hash].css'),
     new HtmlWebpackPlugin({
-      template: './demo/src/index.html'
+      template: 'demo/src/index.html'
     }),
     new Webpack.DefinePlugin({
       ENV: JSON.stringify(EnvConfig.env),
       IS_PRODUCTION: JSON.stringify(EnvConfig.isProduction)
     }),
-    new CleanWebpackPlugin([Paths.AppBuildRoot], {
-      root: Paths.ProjectRoot
+    new CleanWebpackPlugin(['./build'], {
+      root: path.resolve(__dirname, '..')
     })
   ]
 };

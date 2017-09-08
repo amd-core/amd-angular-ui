@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { AmdWindowRefModule } from '../window-ref/window-ref.module';
-import { AMD_MEDIA_QUERY, AmdMediaQuery } from './media-query.constant';
+import { AmdMediaQuery } from './media-query.constant';
+import { AMD_MEDIA_QUERY } from './media-query.token';
 import { AmdMediaQueryService } from './media-query.service';
 
 @NgModule({

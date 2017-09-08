@@ -6,7 +6,8 @@ import { BehaviorSubject } from 'rxjs/BehaviorSubject';
 import * as bowser from 'bowser';
 
 import { AmdWindowRef } from '../window-ref/window-ref.service';
-import { AMD_MEDIA_QUERY, IAmdMediaQuery } from './media-query.constant';
+import { AMD_MEDIA_QUERY } from './media-query.token';
+import { IAmdMediaQuery } from './media-query.interface';
 
 @Injectable()
 export class AmdMediaQueryService {

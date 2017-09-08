@@ -3,7 +3,8 @@ import { Component, ChangeDetectionStrategy, ChangeDetectorRef } from '@angular/
 @Component({
   selector: 'amd-dropdown',
   templateUrl: './dropdown.component.html',
-  changeDetection: ChangeDetectionStrategy.OnPush
+  changeDetection: ChangeDetectionStrategy.OnPush,
+  exportAs: 'amdDropdown'
 })
 export class AmdDropdownComponent {
   public set isContentActive(isContentActive: boolean) {

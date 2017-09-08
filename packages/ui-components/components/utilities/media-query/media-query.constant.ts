@@ -1,21 +1,4 @@
-import { OpaqueToken } from '@angular/core';
-
-export const AMD_MEDIA_QUERY: OpaqueToken = new OpaqueToken('AmdMediaQuery');
-
-export interface IAmdMediaQuery {
-  'xs': string;
-  'gt-xs': string;
-  'sm': string;
-  'gt-sm': string;
-  'md': string;
-  'gt-md': string;
-  'lg': string;
-  'gt-lg': string;
-  'xl': string;
-  'landscape': string;
-  'portrait': string;
-  'print': string;
-}
+import { IAmdMediaQuery } from './media-query.interface';
 
 export const AmdMediaQuery: IAmdMediaQuery = {
   'xs': '(max-width: 599px)',

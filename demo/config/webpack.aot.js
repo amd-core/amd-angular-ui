@@ -1,14 +1,12 @@
 const Webpack = require('webpack');
 const WebpackMerge = require('webpack-merge');
 const NgTools = require('@ngtools/webpack');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
 
-const CommonConfig = require('./common/webpack.common');
-const ProdPlugins = require('./common/prod.plugins');
+const EnvConfig = require('./env');
+const CommonConfig = require('./webpack.common');
 
 module.exports = WebpackMerge(CommonConfig, {
-  entry: {
-    main: './src/main.aot.ts'
-  },
   module: {
     rules: [{
       test: /\.ts$/,
@@ -17,11 +15,36 @@ module.exports = WebpackMerge(CommonConfig, {
       ]
     }]
   },
-  
+
   plugins: [
-    ...ProdPlugins,
+    new HtmlWebpackPlugin({
+      template: 'demo/src/index.html',
+      minify: {
+        html5: true,
+        caseSensitive: true,
+        collapseInlineTagWhitespace: true,
+        collapseWhitespace: true,
+        conservativeCollapse: true,
+        decodeEntities: true,
+        keepClosingSlash: true,
+        removeComments: true,
+        minifyCSS: true,
+        minifyJS: true
+      }
+    }),
+    new Webpack.NoEmitOnErrorsPlugin(),
+    new Webpack.optimize.UglifyJsPlugin({
+      mangle: true,
+      compress: {
+        warnings: false
+      },
+      comments: false
+    }),
     new NgTools.AotPlugin({
-      tsConfigPath: './tsconfig.aot.json'
+      skipCodeGeneration: true,
+      replaceExport: false,
+      mainPath: 'src/main.ts',
+      tsConfigPath: 'demo/tsconfig.app.json'
     })
   ]
 });

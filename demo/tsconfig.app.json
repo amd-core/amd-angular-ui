@@ -11,10 +11,7 @@
 		"pretty": true,
 		"sourceMap": true,
 
-		"baseUrl": "./demo/src",
-		"rootDir": "../",
-		"sourceRoot": "./demo/src",
-		"outDir": "./demo/build",
+		"baseUrl": "../",
 
 		"allowUnreachableCode": false,
 		"allowUnusedLabels": false,
@@ -39,7 +36,7 @@
 
     "paths": {
       "@amd-core/angular-ui": [
-        "./packages/ui-components/components"
+        "packages/ui-components/components"
       ]
     }
 	},
