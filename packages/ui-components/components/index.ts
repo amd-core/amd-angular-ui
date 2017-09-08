@@ -1,6 +1,3 @@
-export * from './amd-overlay/overlay.component';
-export * from './amd-overlay/overlay.module';
-
 export * from './amd-parallax/amd-parallax.directive';
 export * from './amd-parallax/amd-parallax.module';
 
@@ -35,6 +32,9 @@ export * from './form/select/select.module';
 
 export * from './hero/hero.component';
 export * from './hero/hero.module';
+
+export * from './overlay/overlay.component';
+export * from './overlay/overlay.module';
 
 export * from './utilities/amd-media-query/amd-media-query.constant';
 export * from './utilities/amd-media-query/amd-media-query.module';
