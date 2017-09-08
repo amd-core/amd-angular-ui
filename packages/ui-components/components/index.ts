@@ -1,6 +1,3 @@
-export * from './amd-app-container/amd-app-container.component';
-export * from './amd-app-container/amd-app-container.module';
-
 export * from './amd-dialog/amd-dialog.component';
 export * from './amd-dialog/amd-dialog.module';
 
@@ -26,6 +23,9 @@ export * from './amd-parallax/amd-parallax.module';
 export * from './amd-sidenav/amd-sidenav.component';
 export * from './amd-sidenav/amd-sidenav.module';
 export * from './amd-sidenav/amd-sidenav.service';
+
+export * from './app-container/app-container.component';
+export * from './app-container/app-container.module';
 
 export * from './option/option.component';
 export * from './option/option.module';

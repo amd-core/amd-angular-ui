@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 
 import { AmdScrollModule } from '../utilities/amd-scroll/amd-scroll.module';
-import { AmdAppContainerComponent } from './amd-app-container.component';
+import { AmdAppContainerComponent } from './app-container.component';
 
 @NgModule({
   imports: [AmdScrollModule],

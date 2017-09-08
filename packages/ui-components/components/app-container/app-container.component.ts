@@ -5,7 +5,7 @@ import { AmdScrollService } from '../utilities/amd-scroll/amd-scroll.service';
 
 @Component({
   selector: 'amd-app-container',
-  templateUrl: './amd-app-container.component.html'
+  templateUrl: './app-container.component.html'
 })
 export class AmdAppContainerComponent {
   constructor(
