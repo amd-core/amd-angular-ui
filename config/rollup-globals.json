@@ -9,6 +9,7 @@
   "@angular/platform-browser/animations": "ng.platformBrowser.animations",
   "@angular/material": "ng.material",
   "@angular/cdk": "ng.cdk",
+  "@angular/cdk/keycodes": "ng.cdk.keycodes",
   "rxjs/Subject": "Rx",
   "rxjs/add/observable/fromEvent": "Rx.Observable",
   "rxjs/add/observable/forkJoin": "Rx.Observable",

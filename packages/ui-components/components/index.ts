@@ -1,9 +1,3 @@
-export * from './amd-dialog/amd-dialog.component';
-export * from './amd-dialog/amd-dialog.module';
-
-export * from './dropdown/dropdown.component';
-export * from './dropdown/dropdown.module';
-
 export * from './amd-form/amd-form.module';
 export * from './amd-form/amd-button/amd-button.directive';
 export * from './amd-form/amd-button/amd-button.module';
@@ -26,6 +20,12 @@ export * from './amd-sidenav/amd-sidenav.service';
 
 export * from './app-container/app-container.component';
 export * from './app-container/app-container.module';
+
+export * from './dialog/dialog.component';
+export * from './dialog/dialog.module';
+
+export * from './dropdown/dropdown.component';
+export * from './dropdown/dropdown.module';
 
 export * from './option/option.component';
 export * from './option/option.module';
