@@ -2,6 +2,6 @@ import { Component } from '@angular/core';
 
 @Component({
   selector: 'amd-hero',
-  templateUrl: './amd-hero.component.html'
+  templateUrl: './hero.component.html'
 })
 export class AmdHeroComponent { }

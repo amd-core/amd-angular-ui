@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 
-import { AmdHeroComponent } from './amd-hero.component';
+import { AmdHeroComponent } from './hero.component';
 
 @NgModule({
   declarations: [AmdHeroComponent],
