@@ -7,8 +7,8 @@ import {
 } from '@angular/core';
 import { ENTER } from '@angular/cdk/keycodes';
 
-import { AmdInputContainerComponent } from '../form/input/input-container.component';
 import { AmdDropdownComponent } from '../dropdown/dropdown.component';
+import { AmdInputContainerComponent } from '../input-container/input-container.component';
 import { AmdOptionComponent } from '../option/option.component';
 
 @Component({

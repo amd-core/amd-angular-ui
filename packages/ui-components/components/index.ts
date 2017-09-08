@@ -17,21 +17,24 @@ export * from './app-container/app-container.module';
 export * from './dialog/dialog.component';
 export * from './dialog/dialog.module';
 
-export * from './dropdown/dropdown.component';
-export * from './dropdown/dropdown.module';
-
 export * from './form/form.module';
+
 export * from './form/button/button.directive';
 export * from './form/button/button.module';
-export * from './form/input/input-container.component';
+
+export * from './form/dropdown/dropdown.component';
+export * from './form/dropdown/dropdown.module';
+
 export * from './form/input/input.directive';
 export * from './form/input/input.module';
 
-export * from './option/option.component';
-export * from './option/option.module';
+export * from './form/input-container/input-container.component';
 
-export * from './select/select.component';
-export * from './select/select.module';
+export * from './form/option/option.component';
+export * from './form/option/option.module';
+
+export * from './form/select/select.component';
+export * from './form/select/select.module';
 
 export * from './utilities/amd-media-query/amd-media-query.constant';
 export * from './utilities/amd-media-query/amd-media-query.module';

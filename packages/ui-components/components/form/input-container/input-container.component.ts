@@ -4,7 +4,7 @@ import {
   ChangeDetectorRef
 } from '@angular/core';
 
-import { AmdInputDirective } from './input.directive';
+import { AmdInputDirective } from '../input/input.directive';
 
 @Component({
   selector: 'amd-input-container',
