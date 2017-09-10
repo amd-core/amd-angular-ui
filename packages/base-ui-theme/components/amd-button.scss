@@ -2,7 +2,7 @@
 @import '../styles/colors';
 @import '../styles/effects-mixins';
 
-@mixin colored-button($background-color, $text-color) {
+@mixin themed-button($background-color, $text-color) {
   background-color: $background-color;
   color: $text-color;
 
@@ -21,14 +21,14 @@
   @include box-shadow($button-box-shadow);
 
   &--default {
-    @include colored-button($default-color, $default-color-text);
+    @include themed-button($default-color, $default-color-text);
   }
 
   &--primary {
-    @include colored-button($primary-color, $primary-color-text);
+    @include themed-button($primary-color, $primary-color-text);
   }
 
   &--secondary {
-    @include colored-button($secondary-color, $secondary-color-text);
+    @include themed-button($secondary-color, $secondary-color-text);
   }
 }

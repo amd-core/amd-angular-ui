@@ -36,8 +36,8 @@ $dropdown-box-shadow: $box-shadow !default;
 /**
  * Buttons
  */
- $button-border-radius: $border-radius !default;
- $button-box-shadow: $box-shadow !default;
+$button-border-radius: $border-radius !default;
+$button-box-shadow: $box-shadow !default;
 
  /**
   * Inputs
@@ -50,3 +50,9 @@ $input-padding: 5px 7.5px !default;
 $input-color: $secondary-text-color !default;
 $input-font-size: $base-font-size !default;
 $input-min-width: 200px !default;
+
+/**
+ * Navbar
+ */
+$navbar-border-radius: $border-radius !default;
+$navbar-box-shadow: $box-shadow !default;

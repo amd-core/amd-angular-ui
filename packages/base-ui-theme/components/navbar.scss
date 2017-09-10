@@ -1,0 +1,53 @@
+@import '../styles/variables';
+@import '../styles/colors';
+@import '../styles/effects-mixins';
+
+@mixin themed-navbar($background-color, $text-color) {
+  background-color: $background-color;
+  color: $text-color;
+}
+
+@mixin themed-navbar-item($background-color, $text-color) {
+  background-color: $background-color;
+  color: $text-color;
+
+  &:hover,
+  &:focus {
+    background-color: darken($background-color, 2.5);
+  }
+
+  &:active {
+    background-color: darken($background-color, 5);
+  }
+}
+
+.amd-navbar {
+  @include border-radius($navbar-border-radius);
+  @include box-shadow($navbar-box-shadow);
+
+  &--default {
+    @include themed-navbar($default-color, $default-color-text);
+  }
+
+  &--primary {
+    @include themed-navbar($primary-color, $primary-color-text);
+  }
+
+  &--secondary {
+    @include themed-navbar($secondary-color, $secondary-color-text);
+  }
+
+  &__item {
+    &--default {
+      @include themed-navbar-item($default-color, $default-color-text);
+    }
+
+    &--primary {
+      @include themed-navbar-item($primary-color, $primary-color-text);
+    }
+
+    &--secondary {
+      @include themed-navbar-item($secondary-color, $secondary-color-text);
+    }
+  }
+}

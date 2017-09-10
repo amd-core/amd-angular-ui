@@ -3,7 +3,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import {
   AmdButtonModule, AmdParallaxModule, AmdAppContainerModule,
   AmdHeroModule, AmdDropdownModule, AmdInputModule, AmdSelectModule,
-  AmdInputContainerModule
+  AmdInputContainerModule, AmdNavbarModule
 } from '@amd-core/angular-ui';
 
 import { AppComponent } from './app.component';
@@ -16,7 +16,8 @@ import { AppComponent } from './app.component';
     AmdButtonModule, AmdParallaxModule,
     AmdAppContainerModule, AmdHeroModule,
     AmdDropdownModule, AmdInputModule,
-    AmdSelectModule, AmdInputContainerModule
+    AmdSelectModule, AmdInputContainerModule,
+    AmdNavbarModule
   ],
   declarations: [AppComponent],
   bootstrap: [AppComponent]

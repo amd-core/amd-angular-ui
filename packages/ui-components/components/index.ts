@@ -27,6 +27,9 @@ export * from './form/select/select.module';
 export * from './hero/hero.component';
 export * from './hero/hero.module';
 
+export * from './navbar/navbar.component';
+export * from './navbar/navbar.module';
+
 export * from './overlay/overlay.component';
 export * from './overlay/overlay.module';
 
