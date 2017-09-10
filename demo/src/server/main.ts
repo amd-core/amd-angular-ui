@@ -10,6 +10,7 @@ import * as express from 'express';
 import * as morgan from 'morgan';
 import * as cors from 'cors';
 import * as helmet from 'helmet';
+import * as compression from 'compression';
 
 import { RenderingEngine } from './rendering-engine';
 
@@ -27,6 +28,7 @@ Server.engine('html', RenderingEngine({
 
 Server.set('views', AppBuildRoot);
 
+Server.use(compression());
 Server.use(morgan('combined'));
 Server.use(cors());
 Server.use(helmet());
