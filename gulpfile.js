@@ -41,16 +41,16 @@ function createRollupBundle(config) {
     context: 'this',
     external: Object.keys(ROLLUP_GLOBALS),
     plugins: config.plugins,
-    entry: config.entry
+    input: config.input
   })
   .then((bundle) => {
     bundle.write({
-      moduleName: 'amd.angular-ui',
+      name: 'amd.angular-ui',
       banner: LICENSE_BANNER,
       format: config.format,
-      dest: config.dest,
+      file: config.file,
       globals: ROLLUP_GLOBALS,
-      sourceMap: true
+      sourcemap: true
     })
   });
 }
@@ -192,24 +192,24 @@ gulp.task('metadata', ['metadata:typings', 'metadata:ngc']);
 
 gulp.task('bundle:main', ['html:es5', 'ngc:es5', 'inline:es5'], () => {
   return createRollupBundle({
-    entry: path.resolve(es5Dist, 'angular-ui.js'),
-    dest: path.resolve(bundlesDir, 'angular-ui.umd.js'),
+    input: path.resolve(es5Dist, 'angular-ui.js'),
+    file: path.resolve(bundlesDir, 'angular-ui.umd.js'),
     format: 'umd'
   });
 });
 
 gulp.task('bundle:es5', ['html:es5', 'ngc:es5', 'inline:es5'], () => {
   return createRollupBundle({
-    entry: path.resolve(es5Dist, 'angular-ui.js'),
-    dest: path.resolve(bundlesDir, 'angular-ui.es5.js'),
+    input: path.resolve(es5Dist, 'angular-ui.js'),
+    file: path.resolve(bundlesDir, 'angular-ui.es5.js'),
     format: 'es'
   });
 });
 
 gulp.task('bundle:es6', ['html:es6', 'ngc:es6', 'inline:es6'], () => {
   return createRollupBundle({
-    entry: path.resolve(es6Dist, 'angular-ui.js'),
-    dest: path.resolve(bundlesDir, 'angular-ui.es6.js'),
+    input: path.resolve(es6Dist, 'angular-ui.js'),
+    file: path.resolve(bundlesDir, 'angular-ui.es6.js'),
     format: 'es'
   });
 });
