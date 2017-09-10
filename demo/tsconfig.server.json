@@ -1,12 +1,27 @@
 {
-  "extends": "./tsconfig.base.json",
-	"files": [
-    "src/server/app.server.ts",
-    "src/server/server.aot.ts"
-	],
-	"angularCompilerOptions": {
-		"genDir": "aot",
-		"entryModule": "./src/app/app.module#AppModule",
-		"skipMetadataEmit": true
-	}
+  "compilerOptions": {
+    "target": "es5",
+    "module": "commonjs",
+    "moduleResolution": "node",
+    "baseUrl": "../",
+    
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "importHelpers": true,
+
+    "lib": [
+      "es6",
+      "es7",
+      "dom"
+    ],
+    
+    "paths": {
+      "@amd-core/angular-ui": [
+        "packages/ui-components/components"
+      ]
+    }
+  },
+  "include": [
+    "demo/src/**/*.ts"
+  ]
 }

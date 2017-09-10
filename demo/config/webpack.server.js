@@ -2,72 +2,84 @@ const Webpack = require('webpack');
 const NgTools = require('@ngtools/webpack');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
 const NodeExternals = require('webpack-node-externals');
-
-const Paths = require('./common/paths');
+const path = require('path');
 
 module.exports = {
   target: 'node',
   entry: {
-    server: ['./src/server/app.server.ts', './src/server/server.aot.ts']
+    server: [
+      './demo/src/server/app-server.module.ts',
+      './demo/src/server/main.ts'
+    ]
   },
+
+  node: {
+    __dirname: false,
+    __filename: false,
+  },
+
   output: {
-    path: Paths.BuildRoot,
+    path: path.resolve(__dirname, '..', 'build'),
     filename: '[name].js',
     publicPath: '/public/'
   },
   resolve: {
+    mainFields: ['module', 'main'],
     extensions: ['.ts', '.js', '.json']
   },
   externals: [NodeExternals()],
   module: {
     rules: [{
-        test: /\.html$/,
-        use: 'html-loader'
-      },
-      {
-        test: /\.scss$/,
-        use: ['raw-loader', 'sass-loader']
-      },
-      {
-        test: /\.ts$/,
-        use: [
-          '@ngtools/webpack'
-        ]
-      }, {
-        test: /\.(png|jpe?g|gif|svg|ico)$/,
-        include: Paths.ImageRoot,
-        use: [{
+      test: /\.html$/,
+      use: 'html-loader'
+    },
+    {
+      test: /\.scss$/,
+      use: ['raw-loader', 'sass-loader']
+    },
+    {
+      test: /\.ts$/,
+      use: [
+        '@ngtools/webpack'
+      ]
+    }, {
+      test: /\.(gif|png|jpe?g|svg|ico)$/i,
+      loaders: [
+        {
           loader: 'file-loader',
           query: {
             name: 'images/[name].[hash].[ext]',
-            emitFile: false
+            hash: 'sha512',
+            digest: 'hex'
           }
-        }]
-      }, {
-        test: /\.(svg|woff|woff2|ttf|eot)$/,
-        include: Paths.FontRoot,
-        use: [{
-          loader: 'file-loader',
-          query: {
-            name: 'fonts/[name].[hash].[ext]',
-            emitFile: false
-          }
-        }]
-      }
+        }
+      ]
+    }, {
+      test: /\.(woff|woff2|ttf|eot)$/,
+      use: [{
+        loader: 'file-loader',
+        query: {
+          name: 'fonts/[name].[hash].[ext]'
+        }
+      }]
+    }
     ]
   },
   plugins: [
     new Webpack.ContextReplacementPlugin(
       /angular(\\|\/)core(\\|\/)@angular/,
-      Paths.SourceRoot, {}
+      './src', {}
     ),
     new Webpack.NoEmitOnErrorsPlugin(),
     new NgTools.AotPlugin({
-      tsConfigPath: './tsconfig.server.json'
+      skipCodeGeneration: true,
+      replaceExport: false,
+      entryModule: 'demo/src/server/app-server.module.ts#AppServerModule',
+      tsConfigPath: 'demo/tsconfig.server.json'
     }),
-    new CleanWebpackPlugin([Paths.BuildRoot], {
-      root: Paths.ProjectRoot,
-      exclude: Paths.AppBuildRoot
+    new CleanWebpackPlugin(['./build'], {
+      root: path.resolve(__dirname, '..'),
+      exclude: './build/public'
     })
   ]
 };

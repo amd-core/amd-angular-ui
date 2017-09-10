@@ -20,13 +20,13 @@ module.exports = {
   },
 
   output: {
-    path: path.resolve(__dirname, '..', 'build'),
+    path: path.resolve(__dirname, '..', 'build', 'public'),
     filename: 'js/[name].[hash].js',
     chunkFilename: 'js/[id].[hash].chunk.js'
   },
 
   devServer: {
-    contentBase: './build',
+    contentBase: './build/public',
     inline: true,
     historyApiFallback: true,
     overlay: {
@@ -97,7 +97,7 @@ module.exports = {
       ENV: JSON.stringify(EnvConfig.env),
       IS_PRODUCTION: JSON.stringify(EnvConfig.isProduction)
     }),
-    new CleanWebpackPlugin(['./build'], {
+    new CleanWebpackPlugin(['./build/public'], {
       root: path.resolve(__dirname, '..')
     })
   ]

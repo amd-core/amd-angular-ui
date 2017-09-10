@@ -11,7 +11,7 @@ import { AppComponent } from './app.component';
 @NgModule({
   imports: [
     BrowserModule.withServerTransition({
-      appId: 'amd-angular-seed'
+      appId: 'amd-core-angular-ui-demo',
     }),
     AmdButtonModule, AmdParallaxModule,
     AmdAppContainerModule, AmdHeroModule,

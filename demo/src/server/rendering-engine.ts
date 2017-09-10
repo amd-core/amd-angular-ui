@@ -1,21 +1,21 @@
 import * as fs from 'fs';
-import { renderModuleFactory } from '@angular/platform-server';
+import { renderModule } from '@angular/platform-server';
 import { Request } from 'express';
 
-const templateCache = {};
-const outputCache = {};
+const templateCache: any = {};
+const outputCache: any = {};
 
 export interface IRenderCallback {
   (err: Error | undefined, html: string): void;
 }
 
 export interface IRenderOptions {
-  req: Request
+  req: Request;
 }
 
-export const RenderingEngine = (setupOptions: any) => {
+export const RenderingEngine: any = (setupOptions: any) => {
 
-  return function (filePath: string, options: IRenderOptions, callback: IRenderCallback) {
+  return (filePath: string, options: IRenderOptions, callback: IRenderCallback) => {
 
     let url: string = options.req.url;
     let html: string = outputCache[url];
@@ -28,11 +28,14 @@ export const RenderingEngine = (setupOptions: any) => {
     console.log('building: ' + url);
     if (!templateCache[filePath]) { templateCache[filePath] = fs.readFileSync(filePath).toString(); }
 
-    renderModuleFactory(setupOptions.bootstrap[0], {
+    renderModule(setupOptions.bootstrap, {
       document: templateCache[filePath], url
     }).then((str: string) => {
+      console.log('Got output');
       outputCache[url] = str;
       return callback(undefined, str);
+    }).catch((err: Error) => {
+      console.error('Error', err);
     });
-  }
-}
+  };
+};

@@ -2,7 +2,8 @@
 	"compilerOptions": {
 		"target": "es5",
 		"module": "es2015",
-		"moduleResolution": "node",
+    "moduleResolution": "node",
+    "baseUrl": "../",
 
 		"emitDecoratorMetadata": true,
 		"experimentalDecorators": true,
@@ -10,8 +11,6 @@
 		"importHelpers": true,
 		"pretty": true,
 		"sourceMap": true,
-
-		"baseUrl": "../",
 
 		"allowUnreachableCode": false,
 		"allowUnusedLabels": false,
@@ -40,16 +39,8 @@
       ]
     }
 	},
-	"include": [
-		"src/**/*.ts"
-	],
-	"exclude": [
-		".vscode",
-		"config",
-		"coverage",
-		"node_modules",
-		"build",
-		"**/*.spec.ts",
-		"**/*.aot.ts"
-	]
+	"files": [
+    "src/main.ts",
+    "src/typings.d.ts"
+  ]
 }
