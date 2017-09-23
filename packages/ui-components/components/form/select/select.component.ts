@@ -29,6 +29,7 @@ import { AmdOptionComponent } from '../option/option.component';
 // tslint:enable
 export class AmdSelectComponent implements OnInit, AfterContentInit, ControlValueAccessor {
   @Input() public placeholder: string = '';
+  @Input() public label: string = '';
 
   public isContentActive: boolean = false;
 
