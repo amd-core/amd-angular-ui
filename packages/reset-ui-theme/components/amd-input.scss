@@ -3,4 +3,5 @@
 .amd-input {
   @include appearance(none);
   outline: none;
+  display: inline-block;
 }

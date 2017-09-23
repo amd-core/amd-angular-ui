@@ -1,14 +1,14 @@
 <div class="amd-select">
-  <amd-dropdown>
-    <div class="amd-select__trigger" amdDropdownTrigger>
-      <amd-input-container>
-        <label>{{label}}</label>
+  <amd-input-container>
+    <label *ngIf="label">{{label}}</label>
+    <amd-dropdown>
+      <div class="amd-select__trigger" amdDropdownTrigger>
         <div amdInput>{{content}}</div>
-      </amd-input-container>
-    </div>
+      </div>
 
-    <div class="amd-select__content amd-menu" amdDropdownContent>
-      <ng-content></ng-content>
-    </div>
-  </amd-dropdown>
+      <div class="amd-select__content amd-menu" amdDropdownContent>
+        <ng-content></ng-content>
+      </div>
+    </amd-dropdown>
+  </amd-input-container>
 </div>

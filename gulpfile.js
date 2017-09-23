@@ -4,11 +4,12 @@ const clean = require('gulp-clean');
 const rollup = require('rollup');
 const sourcemaps = require('gulp-sourcemaps');
 const sass = require('gulp-sass');
-const concat = require('gulp-concat');
 const path = require('path');
 const angularInline = require('@amd-core/gulp-angular-inline');
 const ngc = require('@angular/tsc-wrapped').main;
 const tslint = require('gulp-tslint');
+const rename = require('gulp-rename');
+const stripComments = require('gulp-strip-comments');
 
 const packageDir = path.resolve('packages');
 const srcDir = path.resolve(packageDir, 'ui-components');
@@ -25,6 +26,10 @@ const tmpDir = path.resolve(baseDistDir, 'tmp');
 
 const es5Dist = path.resolve(tmpDir, 'es5');
 const es6Dist = path.resolve(tmpDir, 'es6');
+
+const sassOptions = {
+  outputStyle: 'expanded' 
+};
 
 const LICENSE_BANNER =
 `/**
@@ -76,19 +81,21 @@ gulp.task('lint', ['lint:ts']);
  */
 
 gulp.task('sass:reset', ['clean:pre'], () => {
-  return gulp.src(path.resolve(packageDir, 'reset-ui-theme', '**/*.scss'))
+  return gulp.src(path.resolve(packageDir, 'reset-ui-theme', 'index.scss'))
     .pipe(sourcemaps.init())
-    .pipe(sass().on('error', sass.logError))
-    .pipe(concat('reset-ui-theme.css'))
+    .pipe(sass(sassOptions).on('error', sass.logError))
+    .pipe(stripComments.text())
+    .pipe(rename('reset-ui-theme.css'))
     .pipe(sourcemaps.write('./'))
     .pipe(gulp.dest(themesDir));
 });
 
 gulp.task('sass:base', ['clean:pre'], () => {
-  return gulp.src(path.resolve(packageDir, 'base-ui-theme', '**/*.scss'))
+  return gulp.src(path.resolve(packageDir, 'base-ui-theme', 'index.scss'))
     .pipe(sourcemaps.init())
-    .pipe(sass().on('error', sass.logError))
-    .pipe(concat('base-ui-theme.css'))
+    .pipe(sass(sassOptions).on('error', sass.logError))
+    .pipe(stripComments.text())
+    .pipe(rename('base-ui-theme.css'))
     .pipe(sourcemaps.write('./'))
     .pipe(gulp.dest(themesDir));
 });

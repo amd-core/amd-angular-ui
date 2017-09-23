@@ -46,6 +46,7 @@
     
     <div style="display: flex">
       <amd-input-container>
+        <label for="demoText">Demo Text</label>
         <input type="text" amdInput placeholder="Standard text input...">
       </amd-input-container>
     </div>
@@ -53,7 +54,7 @@
     <form #form="ngForm">
       <amd-select
         placeholder="Select.." [(ngModel)]="selectedOption"
-        name="selector" id="selector">
+        name="selector" id="selector" label="Demo Select">
         <amd-option value="1">Option 1</amd-option>
         <amd-option value="2">Option 2</amd-option>
       </amd-select>

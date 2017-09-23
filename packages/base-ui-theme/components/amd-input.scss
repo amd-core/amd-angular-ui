@@ -10,7 +10,7 @@
   font-size: $input-font-size;
   min-width: $input-min-width;
 
-  &:placeholder {
+  &::placeholder {
     color: $input-color;
   }
 
