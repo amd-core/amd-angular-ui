@@ -50,12 +50,15 @@
       </amd-input-container>
     </div>
 
-    <div>
-      <amd-select placeholder="Select..">
-        <amd-option>Option 1</amd-option>
-        <amd-option>Option 2</amd-option>
+    <form #form="ngForm">
+      <amd-select
+        placeholder="Select.." [(ngModel)]="selectedOption"
+        name="selector" id="selector">
+        <amd-option value="1">Option 1</amd-option>
+        <amd-option value="2">Option 2</amd-option>
       </amd-select>
-    </div>
+    </form>
+    <div>{{selectedOption}}</div>
   </div>
 
 </amd-app-container>

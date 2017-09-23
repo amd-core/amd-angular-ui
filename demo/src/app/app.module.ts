@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { FormsModule } from '@angular/forms';
 import {
   AmdButtonModule, AmdParallaxModule, AmdAppContainerModule,
   AmdHeroModule, AmdDropdownModule, AmdInputModule, AmdSelectModule,
@@ -13,6 +14,7 @@ import { AppComponent } from './app.component';
     BrowserModule.withServerTransition({
       appId: 'amd-core-angular-ui-demo',
     }),
+    FormsModule,
     AmdButtonModule, AmdParallaxModule,
     AmdAppContainerModule, AmdHeroModule,
     AmdDropdownModule, AmdInputModule,

@@ -3,25 +3,37 @@ import {
   Renderer2, OnInit, ElementRef,
   HostListener, ViewChild,
   QueryList, Input, ChangeDetectorRef,
-  AfterContentInit, ContentChildren
+  AfterContentInit, ContentChildren,
+  forwardRef
 } from '@angular/core';
 import { ENTER } from '@angular/cdk/keycodes';
+import { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';
 
 import { AmdDropdownComponent } from '../dropdown/dropdown.component';
 import { AmdInputContainerComponent } from '../input-container/input-container.component';
 import { AmdOptionComponent } from '../option/option.component';
 
+// tslint:disable
 @Component({
   selector: 'amd-select',
   templateUrl: './select.component.html',
-  changeDetection: ChangeDetectionStrategy.OnPush
+  changeDetection: ChangeDetectionStrategy.OnPush,
+  providers: [ // [TODO] - further investigate how @angular/material handles this
+    {
+      provide: NG_VALUE_ACCESSOR,
+      useExisting: forwardRef(() => AmdSelectComponent),
+      multi: true,
+    }
+  ]
 })
-export class AmdSelectComponent implements OnInit, AfterContentInit {
+// tslint:enable
+export class AmdSelectComponent implements OnInit, AfterContentInit, ControlValueAccessor {
   @Input() public placeholder: string = '';
 
   public isContentActive: boolean = false;
 
   public value: string = '';
+  public content: string = '';
 
   @ViewChild(AmdDropdownComponent) private dropdown: AmdDropdownComponent;
   @ViewChild(AmdInputContainerComponent) private inputContainer: AmdInputContainerComponent;
@@ -33,19 +45,39 @@ export class AmdSelectComponent implements OnInit, AfterContentInit {
     private changeDetectorRef: ChangeDetectorRef
   ) { }
 
+  public propagateChange = (value: string) => {
+    // do nothing
+  }
+
   public ngOnInit(): void {
     this.renderer.setAttribute(this.elementRef.nativeElement, 'tabindex', '0');
-    this.value = this.placeholder;
+    this.content = this.placeholder;
   }
 
   public ngAfterContentInit(): void {
     this.options.forEach((option: AmdOptionComponent) => {
       option.optionClick.subscribe(() => {
         this.value = option.value;
+        this.content = option.content;
         this.dropdown.close();
         this.changeDetectorRef.markForCheck();
+        this.propagateChange(this.value);
       });
     });
+  }
+
+  public writeValue(value: string): void {
+    if (!value) { return; }
+
+    this.value = value;
+  }
+
+  public registerOnChange(fn: any): void {
+    this.propagateChange = fn;
+  }
+
+  public registerOnTouched(): void {
+    // todo
   }
 
   @HostListener('focus')

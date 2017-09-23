@@ -1,6 +1,7 @@
 import {
   Component, ChangeDetectionStrategy,
-  Output, EventEmitter, ElementRef
+  Output, EventEmitter, ElementRef,
+  Input
 } from '@angular/core';
 
 @Component({
@@ -11,9 +12,9 @@ import {
 export class AmdOptionComponent {
   @Output() public optionClick: EventEmitter<{}> = new EventEmitter();
 
-  public content: string;
+  @Input() public value: string;
 
-  public get value(): string {
+  public get content(): string {
     return (this.nativeElement.textContent || '').trim(); // [TODO] - remove direct DOM acces
   }
 
