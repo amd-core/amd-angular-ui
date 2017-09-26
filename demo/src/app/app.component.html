@@ -8,7 +8,17 @@
     <amd-navbar theme="primary">
       <amd-navbar-item>Item #1</amd-navbar-item>
       <amd-navbar-item>Item #2</amd-navbar-item>
-      <amd-navbar-item>Item #3</amd-navbar-item>
+      
+      <amd-dropdown #navbarDropdown="amdDropdown">
+        <amd-navbar-item amdDropdownTrigger>Item #3</amd-navbar-item>
+
+        <div amdDropdownContent class="amd-menu">
+          <div class="amd-menu__item" (click)="navbarDropdown.close()">Menu Item 1</div>
+          <div class="amd-menu__item" (click)="navbarDropdown.close()">Menu Item 2</div>
+          <div class="amd-menu__item" (click)="navbarDropdown.close()">Menu Item 3</div>
+          <div class="amd-menu__item" (click)="navbarDropdown.close()">Menu Item 4</div>
+        </div>
+      </amd-dropdown>
     </amd-navbar>
   </div>
 

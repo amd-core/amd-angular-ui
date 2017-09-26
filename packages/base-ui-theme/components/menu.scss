@@ -3,6 +3,7 @@
 
 .amd-menu {
   &__item {
+    color: $default-color-text;
     padding: $dropdown-menu-item-padding;
 
     &:hover {

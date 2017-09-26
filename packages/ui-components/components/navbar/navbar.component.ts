@@ -8,25 +8,38 @@ import { AmdNavbarItemComponent } from './navbar-item/navbar-item.component';
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class AmdNavbarComponent implements AfterContentInit {
-  @Input() public set theme(theme: string) {
-    this.navbarThemeClass = `amd-navbar--${theme}`;
-    this._theme = theme;
 
-    if (this.navbarItems) {
-      this.navbarItems.forEach((item: AmdNavbarItemComponent) => item.theme = theme);
-    }
-    
-    this.changeDetectorRef.markForCheck();
-  }
-  
   public navbarThemeClass: string = 'amd-navbar--default';
 
-  @ContentChildren(AmdNavbarItemComponent) private navbarItems: QueryList<AmdNavbarItemComponent>;
+  @Input()
+  public set theme(theme: string) {
+    this.navbarThemeClass = `amd-navbar--${theme}`;
+    this._theme = theme;
+    this.setThemeOnChildren();
+  }
+
+  @ContentChildren(AmdNavbarItemComponent, { descendants: true })
+  private set navbarItems(navbarItems: QueryList<AmdNavbarItemComponent>) {
+    this._navbarItems = navbarItems;
+    this.setThemeOnChildren();
+  }
+
+  private _navbarItems: QueryList<AmdNavbarItemComponent>;
   private _theme: string = 'default';
 
   constructor(private changeDetectorRef: ChangeDetectorRef) { }
 
   public ngAfterContentInit(): void {
-    this.navbarItems.forEach((item: AmdNavbarItemComponent) => item.theme = this._theme);
+    this.setThemeOnChildren();
+  }
+
+  private setThemeOnChildren(): void {
+    if (this._navbarItems) {
+      this._navbarItems.forEach((item: AmdNavbarItemComponent) => {
+        item.theme = this._theme;
+      });
+    }
+
+    this.changeDetectorRef.markForCheck();
   }
 }
